@@ -1,0 +1,2066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of ONIX 2.1 elements to objects</description>
+    
+    <!-- mapping for class 'AbstractOnixElement' -->
+    <class name="AbstractOnixElement" extends="AbstractElement">
+    </class>
+
+    <!-- mapping for class 'OnixMessageElement' -->
+    <class name="OnixMessageElement" extends="AbstractOnixElement">
+        <map-to xml="ONIXMessage" ns-uri="http://www.editeur.org/onix/2.1/reference"/>
+        <field name="header" type="OnixHeaderElement">
+            <bind-xml name="Header" node="element"/>
+            <alt-xml name="header"/>
+        </field>
+        <field name="products" collection="array" type="OnixProductElement">
+            <bind-xml name="Product" node="element"/>
+            <alt-xml name="product"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixHeaderElement' -->
+    <class name="OnixHeaderElement" extends="AbstractOnixElement">
+        <field name="fromEANNumber">
+            <bind-xml name="FromEANNumber" node="element"/>
+            <alt-xml name="m172"/>
+        </field>
+        <field name="fromSAN">
+            <bind-xml name="FromSAN" node="element"/>
+            <alt-xml name="m173"/>
+        </field>
+        <field name="fromIdentifiers" collection="array" type="OnixSenderIdentifierElement">
+            <bind-xml name="SenderIdentifier" node="element"/>
+            <alt-xml name="senderidentifier"/>
+        </field>
+        <field name="fromCompany">
+            <bind-xml name="FromCompany" node="element"/>
+            <alt-xml name="m174"/>
+        </field>
+        <field name="fromPerson">
+            <bind-xml name="FromPerson" node="element"/>
+            <alt-xml name="m175"/>
+        </field>
+        <field name="fromEmail">
+            <bind-xml name="FromEmail" node="element"/>
+            <alt-xml name="m283"/>
+        </field>
+        <field name="toEANNumber">
+            <bind-xml name="ToEANNumber" node="element"/>
+            <alt-xml name="m176"/>
+        </field>
+        <field name="toSAN">
+            <bind-xml name="ToSAN" node="element"/>
+            <alt-xml name="m177"/>
+        </field>
+        <field name="adresseeIdentifiers" collection="array" type="OnixAddresseeIdentifierElement">
+            <bind-xml name="SenderIdentifier" node="element"/>
+            <alt-xml name="addresseeidentifier"/>
+        </field>
+        <field name="toCompany">
+            <bind-xml name="ToCompany" node="element"/>
+            <alt-xml name="m178"/>
+        </field>
+        <field name="toPerson">
+            <bind-xml name="ToPerson" node="element"/>
+            <alt-xml name="m179"/>
+        </field>
+        <field name="messageNumber" type="integer">
+            <bind-xml name="MessageNumber" node="element"/>
+            <alt-xml name="m180"/>
+        </field>
+        <field name="messageRepeat" type="integer">
+            <bind-xml name="MessageRepeat" node="element"/>
+            <alt-xml name="m181"/>
+        </field>
+        <field name="sentDate">
+            <bind-xml name="SentDate" node="element"/>
+            <alt-xml name="m182"/>
+        </field>
+        <field name="note">
+            <bind-xml name="MessageNote" node="element"/>
+            <alt-xml name="m183"/>
+        </field>
+        <field name="defaultLanguage">
+            <bind-xml name="DefaultLanguageOfText" node="element"/>
+            <alt-xml name="m184"/>
+        </field>
+        <field name="defaultPriceType">
+            <bind-xml name="DefaultPriceTypeCode" node="element"/>
+            <alt-xml name="m185"/>
+        </field>
+        <field name="defaultCurrency">
+            <bind-xml name="DefaultCurrencyCode" node="element"/>
+            <alt-xml name="m186"/>
+        </field>
+        <field name="defaultClassOfTrade">
+            <bind-xml name="DefaultClassOfTrade" node="element"/>
+            <alt-xml name="m193"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSenderIdentifierElement' -->
+    <class name="OnixSenderIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="SenderIDType" node="element"/>
+            <alt-xml name="m379"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixAddresseeIdentifierElement' -->
+    <class name="OnixAddresseeIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="AddresseeIDType" node="element"/>
+            <alt-xml name="m380"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixProductElement' -->
+    <class name="OnixProductElement" extends="AbstractOnixElement"> 
+        <!-- PR.1  Record reference number, type and source -->
+        <field name="recordReference">
+            <bind-xml name="RecordReference" node="element"/>
+            <alt-xml name="a001"/>
+        </field>
+        <field name="notificationType">
+            <bind-xml name="NotificationType" node="element"/>
+            <alt-xml name="a002"/>
+        </field>
+        <field name="deletionCode">
+            <bind-xml name="DeletionCode" node="element"/>
+            <alt-xml name="a198"/>
+        </field>
+        <field name="deletionText">
+            <bind-xml name="DeletionText" node="element"/>
+            <alt-xml name="a199"/>
+        </field>
+        <field name="recordSourceType">
+            <bind-xml name="RecordSourceType" node="element"/>
+            <alt-xml name="a194"/>
+        </field>
+        <field name="recordSourceIdentifierType">
+            <bind-xml name="RecordSourceIdentifierType" node="element"/>
+            <alt-xml name="a195"/>
+        </field>
+        <field name="recordSourceIdentifier">
+            <bind-xml name="RecordSourceIdentifier" node="element"/>
+            <alt-xml name="a196"/>
+        </field>
+        <field name="recordSourceName">
+            <bind-xml name="RecordSourceName" node="element"/>
+            <alt-xml name="a197"/>
+        </field>
+        <!-- PR.2  Product numbers -->
+        <field name="identifiers" collection="array" type="OnixProductIdentifierElement">
+            <bind-xml name="ProductIdentifier" node="element"/>
+            <alt-xml name="productidentifier"/>
+        </field>
+        <field name="barcodes" collection="array" type="NameElement">
+            <bind-xml name="Barcode" node="element"/>
+            <alt-xml name="b246"/>
+        </field>
+        <!-- PR.3  Product form -->
+        <field name="productForm">
+            <bind-xml name="ProductForm" node="element"/>
+            <alt-xml name="b012"/>
+        </field>
+        <field name="productFormDetails" collection="array" type="NameElement">
+            <bind-xml name="ProductFormDetail" node="element"/>
+            <alt-xml name="b333"/>
+        </field>
+        <field name="productFormFeatures" collection="array" type="OnixProductFormFeatureElement">
+            <bind-xml name="ProductFormFeature" node="element"/>
+            <alt-xml name="productformfeature"/>
+        </field>
+        <field name="productPackaging">
+            <bind-xml name="ProductPackaging" node="element"/>
+            <alt-xml name="b225"/>
+        </field>
+        <field name="productFormDescription">
+            <bind-xml name="ProductFormDescription" node="element"/>
+            <alt-xml name="b014"/>
+        </field>
+        <field name="numberOfPieces" type="integer">
+            <bind-xml name="NumberOfPieces" node="element"/>
+            <alt-xml name="b210"/>
+        </field>
+        <field name="tradeCategory">
+            <bind-xml name="TradeCategory" node="element"/>
+            <alt-xml name="b384"/>
+        </field>
+        <field name="productContentType">
+            <bind-xml name="ProductContentType" node="element"/>
+            <alt-xml name="b385"/>
+        </field>
+        <!-- Note that contained items can also contain additional ProductForm elements.  Not supported -->
+        <field name="containedItems" collection="array" type="OnixProductIdentifierElement">
+            <bind-xml name="ProductIdentifier" location="ContainedItem" node="element"/>
+            <alt-xml name="productidentifier" location="containeditem"/>
+        </field>
+        <field name="classifications" collection="array" type="OnixProductClassificationElement">
+            <bind-xml name="ProductClassification" node="element"/>
+            <alt-xml name="productclassification"/>
+        </field>
+        <!-- PR.4  Epublication detail -->
+        <field name="epubType">
+            <bind-xml name="EpubType" node="element"/>
+            <alt-xml name="b211"/>
+        </field>
+        <field name="epubTypeVersion">
+            <bind-xml name="EpubTypeVersion" node="element"/>
+            <alt-xml name="b212"/>
+        </field>
+        <field name="epubTypeDescription">
+            <bind-xml name="EpubTypeDescription" node="element"/>
+            <alt-xml name="b213"/>
+        </field>
+        <field name="epubFormat">
+            <bind-xml name="EpubFormat" node="element"/>
+            <alt-xml name="b214"/>
+        </field>
+        <field name="epubFormatVersion">
+            <bind-xml name="EpubFormatVersion" node="element"/>
+            <alt-xml name="b215"/>
+        </field>
+        <field name="epubFormatDescription">
+            <bind-xml name="EpubFormatDescription" node="element"/>
+            <alt-xml name="b216"/>
+        </field>
+        <field name="epubSource">
+            <bind-xml name="EpubSource" node="element"/>
+            <alt-xml name="b278"/>
+        </field>
+        <field name="epubSourceVersion">
+            <bind-xml name="EpubSourceVersion" node="element"/>
+            <alt-xml name="b279"/>
+        </field>
+        <field name="epubSourceDescription">
+            <bind-xml name="EpubSourceDescription" node="element"/>
+            <alt-xml name="b280"/>
+        </field>
+        <field name="epubTypeNote">
+            <bind-xml name="EpubTypeNote" node="element"/>
+            <alt-xml name="b277"/>
+        </field>
+        <!-- PR.5  Series -->
+        <field name="series" collection="array" type="OnixSeriesElement">
+            <bind-xml name="Series" node="element"/>
+            <alt-xml name="series"/>
+        </field>
+        <field name="noSeries">
+            <bind-xml name="NoSeries" node="element"/>
+            <alt-xml name="n338"/>
+        </field>
+        <!-- PR.6  Set -->
+        <field name="sets" collection="array" type="OnixSetElement">
+            <bind-xml name="Set" node="element"/>
+            <alt-xml name="set"/>
+        </field>
+        <!-- PR.7  Title -->
+        <field name="titles" collection="array" type="OnixTitleElement">
+            <bind-xml name="Title" node="element"/>
+            <alt-xml name="title"/>
+        </field>
+        <field name="workIdentifiers" collection="array" type="OnixWorkIdentifierElement">
+            <bind-xml name="WorkIdentifier" node="element"/>
+            <alt-xml name="workidentifier"/>
+        </field>
+        <field name="webSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="Website" node="element"/>
+            <alt-xml name="website"/>
+        </field>
+        <field name="thesisType">
+            <bind-xml name="ThesisType" node="element"/>
+            <alt-xml name="b368"/>
+        </field>
+        <field name="thesisPresentedTo">
+            <bind-xml name="ThesisPresentedTo" node="element"/>
+            <alt-xml name="b369"/>
+        </field>
+        <field name="thesisYear">
+            <bind-xml name="ThesisYear" node="element"/>
+            <alt-xml name="b370"/>
+        </field>
+        <!-- PR.8  Authorship -->
+        <field name="contributors" collection="array" type="OnixContributorElement">
+            <bind-xml name="Contributor" node="element"/>
+            <alt-xml name="contributor"/>
+        </field>
+        <field name="contributorStatement">
+            <bind-xml name="ContributorStatement" node="element"/>
+            <alt-xml name="b049"/>
+        </field>
+        <field name="noContributor">
+            <bind-xml name="NoContributor" node="element"/>
+            <alt-xml name="b339"/>
+        </field>
+        <!-- PR.9  Conference -->
+        <field name="conferences" collection="array" type="OnixConferenceElement">
+            <bind-xml name="Conference" node="element"/>
+            <alt-xml name="conference"/>
+        </field>
+        <!-- PR.10  Edition -->
+        <field name="editionCodes" collection="array" type="NameElement">
+            <bind-xml name="EditionTypeCode" node="element"/>
+            <alt-xml name="b056"/>
+        </field>
+        <field name="editionNumber" type="integer">
+            <bind-xml name="EditionNumber" node="element"/>
+            <alt-xml name="b057"/>
+        </field>
+        <field name="editionVersionNumber">
+            <bind-xml name="EditionVersionNumber" node="element"/>
+            <alt-xml name="b217"/>
+        </field>
+        <field name="editionStatement">
+            <bind-xml name="EditionStatement" node="element"/>
+            <alt-xml name="b058"/>
+        </field>
+        <field name="noEdition">
+            <bind-xml name="NoEdition" node="element"/>
+            <alt-xml name="n386"/>
+        </field>
+        <field name="religiousText" type="OnixRelgiousTextElement">
+            <bind-xml name="RelgiousText" node="element"/>
+            <alt-xml name="religioustext"/>
+        </field>
+        <!-- PR.11  Language -->
+        <field name="languages" collection="array" type="OnixLanguageElement">
+            <bind-xml name="Language" node="element"/>
+            <alt-xml name="language"/>
+        </field>
+        <!-- PR.12  Extents and other content -->
+        <field name="pages" type="integer">
+            <bind-xml name="NumberOfPages" node="element"/>
+            <alt-xml name="b061"/>
+        </field>
+        <field name="romanPages" type="integer">
+            <bind-xml name="PagesRoman" node="element"/>
+            <alt-xml name="b254"/>
+        </field>
+        <field name="arabicPages" type="integer">
+            <bind-xml name="PagesArabic" node="element"/>
+            <alt-xml name="b255"/>
+        </field>
+        <field name="extents" collection="array" type="OnixExtentElement">
+            <bind-xml name="Extent" node="element"/>
+            <alt-xml name="extent"/>
+        </field>
+        <field name="numberOfIllustrations" type="integer">
+            <bind-xml name="NumberOfIllustrations" node="element"/>
+            <alt-xml name="b125"/>
+        </field>
+        <field name="illustrationsNote">
+            <bind-xml name="IllustrationsNote" node="element"/>
+            <alt-xml name="b062"/>
+        </field>
+        <field name="illustrations" collection="array" type="OnixIllustrationElement">
+            <bind-xml name="Illustrations" node="element"/>
+            <alt-xml name="illustrations"/>
+        </field>
+        <field name="mapScales" collection="array" type="NameElement">
+            <bind-xml name="MapScale" node="element"/>
+            <alt-xml name="b063"/>
+        </field>
+        <!-- PR.13  Subject-->
+        <field name="basicMainSubject">
+            <bind-xml name="BASICMainSubject" node="element"/>
+            <alt-xml name="b064"/>
+        </field>
+        <field name="basicVersion">
+            <bind-xml name="BASICVersion" node="element"/>
+            <alt-xml name="b200"/>
+        </field>
+        <field name="bicMainSubject">
+            <bind-xml name="BICMainSubject" node="element"/>
+            <alt-xml name="b065"/>
+        </field>
+        <field name="bicVersion">
+            <bind-xml name="BICVersion" node="element"/>
+            <alt-xml name="b066"/>
+        </field>
+        <field name="mainSubjects" collection="array" type="OnixMainSubjectElement">
+            <bind-xml name="MainSubject" node="element"/>
+            <alt-xml name="mainsubject"/>
+        </field>
+        <field name="additionalSubjects" collection="array" type="OnixAdditionalSubjectElement">
+            <bind-xml name="Subject" node="element"/>
+            <alt-xml name="subject"/>
+        </field>
+        <field name="personsAsSubjects" collection="array" type="OnixContributorElement">
+            <bind-xml name="PersonAsSubject" node="element"/>
+            <alt-xml name="personassubject"/>
+        </field>
+        <field name="corporateBodyAsSubject">
+            <bind-xml name="CorporateBodyAsSubject" node="element"/>
+            <alt-xml name="b071"/>
+        </field>
+        <field name="placeAsSubject">
+            <bind-xml name="PlaceAsSubject" node="element"/>
+            <alt-xml name="b072"/>
+        </field>
+        <!-- PR.14  Audience-->
+        <field name="audienceCodes" collection="array" type="NameElement">
+            <bind-xml name="AudienceCode" node="element"/>
+            <alt-xml name="b073"/>
+        </field>
+        <field name="audiences" collection="array" type="OnixAudienceElement">
+            <bind-xml name="Audience" node="element"/>
+            <alt-xml name="audience"/>
+        </field>
+        <field name="audienceRanges" collection="array" type="OnixAudienceRangeElement">
+            <bind-xml name="AudienceRange" node="element"/>
+            <alt-xml name="audiencerange"/>
+        </field>
+        <field name="audienceDescription">
+            <bind-xml name="AudienceDescription" node="element"/>
+            <alt-xml name="b207"/>
+        </field>
+        <field name="complexity" collection="array" type="OnixComplexityElement">
+            <bind-xml name="Complexity" node="element"/>
+            <alt-xml name="complexity"/>
+        </field>
+        <!-- PR.15  Descriptions and other supporting text -->
+        <field name="otherTexts" collection="array" type="OnixOtherTextElement">
+            <bind-xml name="OtherText" node="element"/>
+            <alt-xml name="othertext"/>
+        </field>
+        <!-- PR.16  Links to image/audio/video files -->
+        <field name="mediaFiles" collection="array" type="OnixMediaFileElement">
+            <bind-xml name="MediaFile" node="element"/>
+            <alt-xml name="mediafile"/>
+        </field>
+        <field name="productWebSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="ProductWebsite" node="element"/>
+            <alt-xml name="productwebsite"/>
+        </field>
+        <!-- PR.17  Prizes -->
+        <field name="prizes" collection="array" type="OnixPrizeElement">
+            <bind-xml name="Prize" node="element"/>
+            <alt-xml name="prize"/>
+        </field>
+        <!-- PR.18  Content items -->
+        <!-- Currently unsupported -->
+        <!-- PR.19  Publisher -->
+        <field name="imprints" collection="array" type="OnixImprintElement">
+            <bind-xml name="Imprint" node="element"/>
+            <alt-xml name="imprint"/>
+        </field>
+        <field name="publishers" collection="array" type="OnixPublisherElement">
+            <bind-xml name="Publisher" node="element"/>
+            <alt-xml name="publisher"/>
+        </field>
+        <field name="cityOfPublication">
+            <bind-xml name="CityOfPublication" node="element"/>
+            <alt-xml name="b209"/>
+        </field>
+        <field name="countryOfPublication">
+            <bind-xml name="CountryOfPublication" node="element"/>
+            <alt-xml name="b083"/>
+        </field>
+        <!-- PR.20  Publishing status and dates, and copyright -->
+        <field name="publishingStatus">
+            <bind-xml name="PublishingStatus" node="element"/>
+            <alt-xml name="b394"/>
+        </field>
+        <field name="publishingStatusNote">
+            <bind-xml name="PublishingStatusNote" node="element"/>
+            <alt-xml name="b395"/>
+        </field>
+        <field name="announcementDate">
+            <bind-xml name="AnnouncementDate" node="element"/>
+            <alt-xml name="b086"/>
+        </field>
+        <field name="tradeAnnouncementDate">
+            <bind-xml name="TradeAnnouncementDate" node="element"/>
+            <alt-xml name="b362"/>
+        </field>
+        <field name="publicationDate">
+            <bind-xml name="PublicationDate" node="element"/>
+            <alt-xml name="b003"/>
+        </field>
+        <field name="copyrights" collection="array" type="OnixCopyrightElement">
+            <bind-xml name="CopyrightStatement" node="element"/>
+            <alt-xml name="copyrightstatement"/>
+        </field>
+        <field name="copyrightYear">
+            <bind-xml name="CopyrightYear" node="element"/>
+            <alt-xml name="b087"/>
+        </field>
+        <field name="yearFirstPublished">
+            <bind-xml name="YearFirstPublished" node="element"/>
+            <alt-xml name="b088"/>
+        </field>
+        <!-- PR.21  Territorial rights and other sales restrictions -->
+        <field name="salesRights" collection="array" type="OnixSalesRightsElement">
+            <bind-xml name="SalesRights" node="element"/>
+            <alt-xml name="salesrights"/>
+        </field>
+        <field name="notForSales" collection="array" type="OnixNotForSaleElement">
+            <bind-xml name="NotForSale" node="element"/>
+            <alt-xml name="notforsale"/>
+        </field>
+        <field name="salesRestrictions" collection="array" type="OnixSalesRestrictionElement">
+            <bind-xml name="SalesRestriction" node="element"/>
+            <alt-xml name="salesrestriction"/>
+        </field>
+        <!-- PR.22  Dimensions -->
+        <field name="measures" collection="array" type="OnixMeasureElement">
+            <bind-xml name="Measure" node="element"/>
+            <alt-xml name="measure"/>
+        </field>
+        <!-- PR.23  Related products -->
+        <field name="relatedProducts" collection="array" type="OnixRelatedProductElement">
+            <bind-xml name="RelatedProduct" node="element"/>
+            <alt-xml name="relatedproduct"/>
+        </field>
+        <field name="outOfPrintDate">
+            <bind-xml name="OutOfPrintDate" node="element"/>
+            <alt-xml name="h134"/>
+        </field>
+        <!-- PR.24  Supplier, availability and prices -->
+        <field name="supplyDetails" collection="array" type="OnixSupplyDetailElement">
+            <bind-xml name="SupplyDetail" node="element"/>
+            <alt-xml name="supplydetail"/>
+        </field>
+        <!-- PR.25  Market representation -->
+        <field name="marketRepresentations" collection="array" type="OnixMarketRepresentationElement">
+            <bind-xml name="MarketRepresentation" node="element"/>
+            <alt-xml name="marketrepresentation"/>
+        </field>
+        <!-- PR.26  Sales promotion information -->
+        <field name="promotionCampaign">
+            <bind-xml name="PromotionCampaign" node="element"/>
+            <alt-xml name="k165"/>
+        </field>
+        <field name="promotionContact">
+            <bind-xml name="PromotionContact" node="element"/>
+            <alt-xml name="k166"/>
+        </field>
+        <field name="initialPrintRun">
+            <bind-xml name="InitialPrintRun" node="element"/>
+            <alt-xml name="k167"/>
+        </field>
+        <field name="reprintDetail">
+            <bind-xml name="ReprintDetail" node="element"/>
+            <alt-xml name="k309"/>
+        </field>
+        <field name="copiesSold">
+            <bind-xml name="CopiesSold" node="element"/>
+            <alt-xml name="k168"/>
+        </field>
+        <field name="bookClubAdoption">
+            <bind-xml name="BookClubAdoption" node="element"/>
+            <alt-xml name="l169"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixProductIdentifierElement' -->
+    <class name="OnixProductIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="ProductIDType" node="element"/>
+            <alt-xml name="b221"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixProductFormFeatureElement' -->
+    <class name="OnixProductFormFeatureElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="ProductFormFeatureType" node="element"/>
+            <alt-xml name="b334"/>
+        </field>
+        <field name="value">
+            <bind-xml name="ProductFormFeatureValue" node="element"/>
+            <alt-xml name="b335"/>
+        </field>
+        <field name="details">
+            <bind-xml name="ProductFormFeatureDescription" node="element"/>
+            <alt-xml name="b336"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixProductClassificationElement' -->
+    <class name="OnixProductClassificationElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="ProductClassificationType" node="element"/>
+            <alt-xml name="b274"/>
+        </field>
+        <field name="code">
+            <bind-xml name="ProductClassificationCode" node="element"/>
+            <alt-xml name="b275"/>
+        </field>
+        <field name="percent" type="integer">
+            <bind-xml name="Percent" node="element"/>
+            <alt-xml name="b337"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSeriesElement' -->
+    <class name="OnixSeriesElement" extends="AbstractOnixElement">
+        <field name="identifiers" collection="array" type="OnixSeriesIdentifierElement">
+            <bind-xml name="SeriesIdentifier" node="element"/>
+            <alt-xml name="seriesidentifier"/>
+        </field>
+        <field name="title">
+            <bind-xml name="TitleOfSeries" node="element"/>
+            <alt-xml name="b018"/>
+        </field>
+        <field name="titles" collection="array" type="OnixTitleElement">
+            <bind-xml name="Title" node="element"/>
+            <alt-xml name="title"/>
+        </field>
+        <field name="contributors" collection="array" type="OnixContributorElement">
+            <bind-xml name="Contributor" node="element"/>
+            <alt-xml name="contributor"/>
+        </field>
+        <field name="numberWithinSeries">
+            <bind-xml name="NumberWithinSeries" node="element"/>
+            <alt-xml name="b019"/>
+        </field>
+        <field name="yearOfAnnual">
+            <bind-xml name="YearOfAnnual" node="element"/>
+            <alt-xml name="b020"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSeriesIdentifierElement' -->
+    <class name="OnixSeriesIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="SeriesIDType" node="element"/>
+            <alt-xml name="b273"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSetElement' -->
+    <class name="OnixSetElement" extends="AbstractOnixElement">
+        <field name="identifiers" collection="array" type="OnixProductIdentifierElement">
+            <bind-xml name="ProductIdentifier" node="element"/>
+            <alt-xml name="productidentifier"/>
+        </field>
+        <field name="title">
+            <bind-xml name="TitleOfSet" node="element"/>
+            <alt-xml name="b023"/>
+        </field>
+        <field name="titles" collection="array" type="OnixTitleElement">
+            <bind-xml name="Title" node="element"/>
+            <alt-xml name="title"/>
+        </field>
+        <field name="partNumber">
+            <bind-xml name="SetPartNumber" node="element"/>
+            <alt-xml name="b024"/>
+        </field>
+        <field name="partTitle">
+            <bind-xml name="SetPartTitle" node="element"/>
+            <alt-xml name="b025"/>
+        </field>
+        <field name="numberWithinSet">
+            <bind-xml name="ItemNumberWithinSet" node="element"/>
+            <alt-xml name="b026"/>
+        </field>
+        <field name="levelSequenceNumber">
+            <bind-xml name="LevelSequenceNumber" node="element"/>
+            <alt-xml name="b284"/>
+        </field>
+        <field name="itemTitle">
+            <bind-xml name="SetItemTitle" node="element"/>
+            <alt-xml name="b281"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixTitleElement' -->
+    <class name="OnixTitleElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="TitleType" node="element"/>
+            <alt-xml name="b202"/>
+        </field>
+        <field name="abbreviatedLength" type="integer">
+            <bind-xml name="AbbreviatedLength" node="element"/>
+            <alt-xml name="b276"/>
+        </field>
+        <field name="text">
+            <bind-xml name="TitleText" node="element"/>
+            <alt-xml name="b203"/>
+        </field>
+        <field name="textcase">
+            <bind-xml name="textcase" location="TitleText" node="attribute"/>
+            <alt-xml name="textcase" location="b203"/>
+        </field>
+        <field name="language">
+            <bind-xml name="language" location="TitleText" node="attribute"/>
+            <alt-xml name="language" location="b203"/>
+        </field>
+        <field name="prefix">
+            <bind-xml name="TitlePrefix" node="element"/>
+            <alt-xml name="b030"/>
+        </field>
+        <field name="titleWithoutPrefix">
+            <bind-xml name="TitleWithoutPrefix" node="element"/>
+            <alt-xml name="TitleTextWithoutPrefix"/>
+            <alt-xml name="b031"/>
+        </field>
+        <field name="subtitle">
+            <bind-xml name="Subtitle" node="element"/>
+            <alt-xml name="b029"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixWorkIdentifierElement' -->
+    <class name="OnixWorkIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="WorkIDType" node="element"/>
+            <alt-xml name="b201"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixContributorElement' -->
+    <class name="OnixContributorElement" extends="AbstractOnixElement">
+        <field name="seqeunce" type="integer">
+            <bind-xml name="SequenceNumber" node="element"/>
+            <alt-xml name="b034"/>
+        </field>
+        <field name="role">
+            <bind-xml name="ContributorRole" node="element"/>
+            <alt-xml name="b035"/>
+        </field>
+        <field name="type">
+            <bind-xml name="PersonNameType" node="element"/>
+            <alt-xml name="b250"/>
+        </field>
+        <field name="language">
+            <bind-xml name="LanguageCode" node="element"/>
+            <alt-xml name="b252"/>
+        </field>
+        <field name="sequenceNumberWithinRole" type="integer">
+            <bind-xml name="SequenceNumberWithinRole" node="element"/>
+            <alt-xml name="b340"/>
+        </field>
+        <field name="name">
+            <bind-xml name="PersonName" node="element"/>
+            <alt-xml name="b036"/>
+        </field>
+        <field name="nameInverted">
+            <bind-xml name="PersonNameInverted" node="element"/>
+            <alt-xml name="b037"/>
+        </field>
+        <field name="titlesBeforeNames">
+            <bind-xml name="TitlesBeforeNames" node="element"/>
+            <alt-xml name="b038"/>
+        </field>
+        <field name="namesBeforeKey">
+            <bind-xml name="NamesBeforeKey" node="element"/>
+            <alt-xml name="b039"/>
+        </field>
+        <field name="prefixToKey">
+            <bind-xml name="PrefixToKey" node="element"/>
+            <alt-xml name="b247"/>
+        </field>
+        <field name="keyNames">
+            <bind-xml name="KeyNames" node="element"/>
+            <alt-xml name="b040"/>
+        </field>
+        <field name="namesAfterKey">
+            <bind-xml name="NamesAfterKey" node="element"/>
+            <alt-xml name="b041"/>
+        </field>
+        <field name="suffixToKey">
+            <bind-xml name="SuffixToKey" node="element"/>
+            <alt-xml name="b248"/>
+        </field>
+        <field name="lettersAfterNames">
+            <bind-xml name="LettersAfterNames" node="element"/>
+            <alt-xml name="b042"/>
+        </field>
+        <field name="titlesAfterNames">
+            <bind-xml name="TitlesAfterNames" node="element"/>
+            <alt-xml name="b043"/>
+        </field>
+        <field name="identifiers" collection="array" type="OnixPersonNameIdentifierElement">
+            <bind-xml name="PersonNameIdentifier" node="element"/>
+            <alt-xml name="personnameidentifier"/>
+        </field>
+        <field name="names" collection="array" type="OnixContributorElement">
+            <bind-xml name="Name" node="element"/>
+            <alt-xml name="name"/>
+        </field>
+        <field name="dates" collection="array" type="OnixPersonDateElement">
+            <bind-xml name="PersonDate" node="element"/>
+            <alt-xml name="persondate"/>
+        </field>
+        <field name="affiliations" collection="array" type="OnixPersonAffiliationElement">
+            <bind-xml name="ProfessionalAffiliation" node="element"/>
+            <alt-xml name="professionalaffiliation"/>
+        </field>
+        <field name="corporateName">
+            <bind-xml name="CorporateName" node="element"/>
+            <alt-xml name="b047"/>
+        </field>
+        <field name="biographicalNote">
+            <bind-xml name="BiographicalNote" node="element"/>
+            <alt-xml name="b044"/>
+        </field>
+        <field name="webSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="Website" node="element"/>
+            <alt-xml name="website"/>
+        </field>
+        <field name="details">
+            <bind-xml name="ContributorDescription" node="element"/>
+            <alt-xml name="b048"/>
+        </field>
+        <field name="unnamedPersons">
+            <bind-xml name="UnnamedPersons" node="element"/>
+            <alt-xml name="b249"/>
+        </field>
+        <field name="countries" collection="array" type="NameElement">
+            <bind-xml name="CountryCode" node="element"/>
+            <alt-xml name="b251"/>
+        </field>
+        <field name="regions" collection="array" type="NameElement">
+            <bind-xml name="RegionCode" node="element"/>
+            <alt-xml name="b398"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixPersonNameIdentifierElement' -->
+    <class name="OnixPersonNameIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="PersonNameIDType" node="element"/>
+            <alt-xml name="b390"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixPersonDateElement' -->
+    <class name="OnixPersonDateElement" extends="AbstractOnixElement">
+        <field name="role">
+            <bind-xml name="PersonDateRole" node="element"/>
+            <alt-xml name="b305"/>
+        </field>
+        <field name="dateFormat">
+            <bind-xml name="DateFormat" node="element"/>
+            <alt-xml name="j260"/>
+        </field>
+        <field name="date">
+            <bind-xml name="Date" node="element"/>
+            <alt-xml name="b306"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixPersonAffiliationElement' -->
+    <class name="OnixPersonAffiliationElement" extends="AbstractOnixElement">
+        <field name="postion">
+            <bind-xml name="ProfessionalPosition" node="element"/>
+            <alt-xml name="b045"/>
+        </field>
+        <field name="affiliation">
+            <bind-xml name="Affiliation" node="element"/>
+            <alt-xml name="b046"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixConferenceElement' -->
+    <class name="OnixConferenceElement" extends="AbstractOnixElement">
+        <field name="role">
+            <bind-xml name="ConferenceRole" node="element"/>
+            <alt-xml name="b051"/>
+        </field>
+        <field name="name">
+            <bind-xml name="ConferenceName" node="element"/>
+            <alt-xml name="b052"/>
+        </field>
+        <field name="acronym">
+            <bind-xml name="ConferenceAcronym" node="element"/>
+            <alt-xml name="b341"/>
+        </field>
+        <field name="number">
+            <bind-xml name="ConferenceNumber" node="element"/>
+            <alt-xml name="b053"/>
+        </field>
+        <field name="theme">
+            <bind-xml name="ConferenceTheme" node="element"/>
+            <alt-xml name="b342"/>
+        </field>
+        <field name="date">
+            <bind-xml name="ConferenceDate" node="element"/>
+            <alt-xml name="b054"/>
+        </field>
+        <field name="place">
+            <bind-xml name="ConferencePlace" node="element"/>
+            <alt-xml name="b055"/>
+        </field>
+        <field name="sponsors" collection="array" type="OnixConferenceSponsorElement">
+            <bind-xml name="ConferenceSponsor" node="element"/>
+            <alt-xml name="conferencesponsor"/>
+        </field>
+        <field name="webSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="Website" node="element"/>
+            <alt-xml name="website"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixConferenceSponsorElement' -->
+    <class name="OnixConferenceSponsorElement" extends="AbstractOnixElement">
+        <field name="identifiers" collection="array" type="OnixConferenceSponsorIdentifierElement">
+            <bind-xml name="ConferenceSponsorIdentifier" node="element"/>
+            <alt-xml name="conferencesponsoridentifier"/>
+        </field>
+        <field name="personName">
+            <bind-xml name="PersonName" node="element"/>
+            <alt-xml name="b036"/>
+        </field>
+        <field name="corporateName">
+            <bind-xml name="CorporateName" node="element"/>
+            <alt-xml name="b047"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixConferenceSponsorIdentifierElement' -->
+    <class name="OnixConferenceSponsorIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="ConferenceSponsorIDType" node="element"/>
+            <alt-xml name="b391"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixRelgiousTextElement' -->
+    <class name="OnixRelgiousTextElement" extends="AbstractOnixElement">
+        <field name="bible" type="OnixBibleElement">
+            <bind-xml name="Bible" node="element"/>
+            <alt-xml name="bible"/>
+        </field>
+        <field name="identifier">
+            <bind-xml name="ReligiousTextID" node="element"/>
+            <alt-xml name="b376"/>
+        </field>
+        <field name="features" collection="array" type="OnixReligiousTextFeature">
+            <bind-xml name="ReligiousTextFeature" node="element"/>
+            <alt-xml name="religioustextfeature"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixBibleElement' -->
+    <class name="OnixBibleElement" extends="AbstractOnixElement">
+        <field name="contents" collection="array" type="NameElement">
+            <bind-xml name="BibleContents" node="element"/>
+            <alt-xml name="b352"/>
+        </field>
+        <field name="versions" collection="array" type="NameElement">
+            <bind-xml name="BibleVersion" node="element"/>
+            <alt-xml name="b353"/>
+        </field>
+        <field name="studyType">
+            <bind-xml name="StudyBibleType" node="element"/>
+            <alt-xml name="b389"/>
+        </field>
+        <field name="purposes" collection="array" type="NameElement">
+            <bind-xml name="BiblePurpose" node="element"/>
+            <alt-xml name="b354"/>
+        </field>
+        <field name="organization">
+            <bind-xml name="BibleTextOrganization" node="element"/>
+            <alt-xml name="b355"/>
+        </field>
+        <field name="referenceLocation">
+            <bind-xml name="BibleReferenceLocation" node="element"/>
+            <alt-xml name="b356"/>
+        </field>
+        <field name="features" collection="array" type="NameElement">
+            <bind-xml name="BibleTextFeature" node="element"/>
+            <alt-xml name="b357"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixReligiousTextFeature' -->
+    <class name="OnixReligiousTextFeature" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="ReligiousTextFeatureType" node="element"/>
+            <alt-xml name="b358"/>
+        </field>
+        <field name="code">
+            <bind-xml name="ReligiousTextFeatureCode" node="element"/>
+            <alt-xml name="b359"/>
+        </field>
+        <field name="details">
+            <bind-xml name="ReligiousTextFeatureDescription" node="element"/>
+            <alt-xml name="b360"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixLanguageElement' -->
+    <class name="OnixLanguageElement" extends="AbstractOnixElement">
+        <field name="role">
+            <bind-xml name="LanguageRole" node="element"/>
+            <alt-xml name="b253"/>
+        </field>
+        <field name="code">
+            <bind-xml name="LanguageCode" node="element"/>
+            <alt-xml name="b252"/>
+        </field>
+        <field name="countryCode">
+            <bind-xml name="CountryCode" node="element"/>
+            <alt-xml name="b251"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixExtentElement' -->
+    <class name="OnixExtentElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="ExtentType" node="element"/>
+            <alt-xml name="b218"/>
+        </field>
+        <field name="value">
+            <bind-xml name="ExtentValue" node="element"/>
+            <alt-xml name="b219"/>
+        </field>
+        <field name="unit">
+            <bind-xml name="ExtentUnit" node="element"/>
+            <alt-xml name="b220"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixIllustrationElement' -->
+    <class name="OnixIllustrationElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="IllustrationType" node="element"/>
+            <alt-xml name="b256"/>
+        </field>
+        <field name="details">
+            <bind-xml name="IllustrationTypeDescription" node="element"/>
+            <alt-xml name="b361"/>
+        </field>
+        <field name="number" type="integer">
+            <bind-xml name="Number" node="element"/>
+            <alt-xml name="b257"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixMainSubjectElement' -->
+    <class name="OnixMainSubjectElement" extends="AbstractOnixElement">
+        <field name="schemeIdentifier">
+            <bind-xml name="MainSubjectSchemeIdentifier" node="element"/>
+            <alt-xml name="b191"/>
+        </field>
+        <field name="schemeVersion">
+            <bind-xml name="SubjectSchemeVersion" node="element"/>
+            <alt-xml name="b068"/>
+        </field>
+        <field name="code">
+            <bind-xml name="SubjectCode" node="element"/>
+            <alt-xml name="b069"/>
+        </field>
+        <field name="headingText">
+            <bind-xml name="SubjectHeadingText" node="element"/>
+            <alt-xml name="b070"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixAdditionalSubjectElement' -->
+    <class name="OnixAdditionalSubjectElement" extends="AbstractOnixElement">
+        <field name="schemeIdentifier">
+            <bind-xml name="SubjectSchemeIdentifier" node="element"/>
+            <alt-xml name="b067"/>
+        </field>
+        <field name="schemeName">
+            <bind-xml name="SubjectSchemeName" node="element"/>
+            <alt-xml name="b171"/>
+        </field>
+        <field name="schemeVersion">
+            <bind-xml name="SubjectSchemeVersion" node="element"/>
+            <alt-xml name="b068"/>
+        </field>
+        <field name="code">
+            <bind-xml name="SubjectCode" node="element"/>
+            <alt-xml name="b069"/>
+        </field>
+        <field name="headingText">
+            <bind-xml name="SubjectHeadingText" node="element"/>
+            <alt-xml name="b070"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixAudienceElement' -->
+    <class name="OnixAudienceElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="AudienceCodeType" node="element"/>
+            <alt-xml name="b204"/>
+        </field>
+        <field name="name">
+            <bind-xml name="AudienceCodeTypeName" node="element"/>
+            <alt-xml name="b205"/>
+        </field>
+        <field name="value">
+            <bind-xml name="AudienceCodeValue" node="element"/>
+            <alt-xml name="b206"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixAudienceRangeElement' -->
+    <class name="OnixAudienceRangeElement" extends="AbstractOnixElement">
+        <field name="qualifier" type="integer">
+            <bind-xml name="AudienceRangeQualifier" node="element"/>
+            <alt-xml name="b074"/>
+        </field>
+        <field name="audienceRangeValue1" type="OnixAudienceRangeValueElement" container="false">
+            <bind-xml node="element"/>
+        </field>
+        <field name="audienceRangeValue2" type="OnixAudienceRangeValueElement" container="false">
+            <bind-xml node="element"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixAudienceRangeValueElement' -->
+    <class name="OnixAudienceRangeValueElement" extends="AbstractOnixElement">
+        <field name="precision" type="integer">
+            <bind-xml name="AudienceRangePrecision" node="element"/>
+            <alt-xml name="b075"/>
+        </field>
+        <field name="value">
+            <bind-xml name="AudienceRangeValue" node="element"/>
+            <alt-xml name="b076"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixComplexityElement' -->
+    <class name="OnixComplexityElement" extends="AbstractOnixElement">
+        <field name="schemeIdentifier" type="integer">
+            <bind-xml name="ComplexitySchemeIdentifier" node="element"/>
+            <alt-xml name="b077"/>
+        </field>
+        <field name="code">
+            <bind-xml name="ComplexityCode" node="element"/>
+            <alt-xml name="b078"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixOtherTextElement' -->
+    <class name="OnixOtherTextElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="TextTypeCode" node="element"/>
+            <alt-xml name="d102"/>
+        </field>
+        <field name="format">
+            <bind-xml name="TextFormat" node="element"/>
+            <alt-xml name="d103"/>
+        </field>
+        <field name="text">
+            <bind-xml name="Text" node="element"/>
+            <alt-xml name="d104"/>
+        </field>
+        <field name="linkType">
+            <bind-xml name="TextLinkType" node="element"/>
+            <alt-xml name="d105"/>
+        </field>
+        <field name="link">
+            <bind-xml name="TextLink" node="element"/>
+            <alt-xml name="d106"/>
+        </field>
+        <field name="author">
+            <bind-xml name="TextAuthor" node="element"/>
+            <alt-xml name="d107"/>
+        </field>
+        <field name="sourceCorporate">
+            <bind-xml name="TextSourceCorporate" node="element"/>
+            <alt-xml name="b374"/>
+        </field>
+        <field name="sourceTitle">
+            <bind-xml name="TextSourceTitle" node="element"/>
+            <alt-xml name="d108"/>
+        </field>
+        <field name="publicationDate">
+            <bind-xml name="TextPublicationDate" node="element"/>
+            <alt-xml name="d109"/>
+        </field>
+        <field name="startDate">
+            <bind-xml name="StartDate" node="element"/>
+            <alt-xml name="b324"/>
+        </field>
+        <field name="endDate">
+            <bind-xml name="EndDate" node="element"/>
+            <alt-xml name="b325"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixImprintElement' -->
+    <class name="OnixImprintElement" extends="AbstractOnixElement">
+        <field name="codeType">
+            <bind-xml name="NameCodeType" node="element"/>
+            <alt-xml name="b241"/>
+        </field>
+        <field name="codeTypeName">
+            <bind-xml name="NameCodeTypeName" node="element"/>
+            <alt-xml name="b242"/>
+        </field>
+        <field name="codeValue">
+            <bind-xml name="NameCodeValue" node="element"/>
+            <alt-xml name="b243"/>
+        </field>
+        <field name="name">
+            <bind-xml name="ImprintName" node="element"/>
+            <alt-xml name="b079"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixMediaFileElement' -->
+    <class name="OnixMediaFileElement" extends="AbstractOnixElement">
+        <field name="typeCode">
+            <bind-xml name="MediaFileTypeCode" node="element"/>
+            <alt-xml name="f114"/>
+        </field>
+        <field name="formatCode">
+            <bind-xml name="MediaFileFormatCode" node="element"/>
+            <alt-xml name="f115"/>
+        </field>
+        <field name="imageResolution">
+            <bind-xml name="ImageResolution" node="element"/>
+            <alt-xml name="f259"/>
+        </field>
+        <field name="linkType">
+            <bind-xml name="MediaFileLinkTypeCode" node="element"/>
+            <alt-xml name="f116"/>
+        </field>
+        <field name="link">
+            <bind-xml name="MediaFileLink" node="element"/>
+            <alt-xml name="f117"/>
+        </field>
+        <field name="textWithDownload">
+            <bind-xml name="TextWithDownload" node="element"/>
+            <alt-xml name="f118"/>
+        </field>
+        <field name="downloadCaption">
+            <bind-xml name="DownloadCaption" node="element"/>
+            <alt-xml name="f119"/>
+        </field>
+        <field name="downloadCredit">
+            <bind-xml name="DownloadCredit" node="element"/>
+            <alt-xml name="f120"/>
+        </field>
+        <field name="downloadCopyright">
+            <bind-xml name="DownloadCopyrightNotice" node="element"/>
+            <alt-xml name="f121"/>
+        </field>
+        <field name="downloadTerms">
+            <bind-xml name="DownloadTerms" node="element"/>
+            <alt-xml name="f122"/>
+        </field>
+        <field name="date">
+            <bind-xml name="MediaFileDate" node="element"/>
+            <alt-xml name="f373"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixPrizeElement' -->
+    <class name="OnixPrizeElement" extends="AbstractOnixElement">
+        <field name="name">
+            <bind-xml name="PrizeName" node="element"/>
+            <alt-xml name="g126"/>
+        </field>
+        <field name="year" type="integer">
+            <bind-xml name="PrizeYear" node="element"/>
+            <alt-xml name="g127"/>
+        </field>
+        <field name="country">
+            <bind-xml name="PrizeCountry" node="element"/>
+            <alt-xml name="g128"/>
+        </field>
+        <field name="code">
+            <bind-xml name="PrizeCode" node="element"/>
+            <alt-xml name="g129"/>
+        </field>
+        <field name="jury">
+            <bind-xml name="PrizeJury" node="element"/>
+            <alt-xml name="g343"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixPublisherElement' -->
+    <class name="OnixPublisherElement" extends="AbstractOnixElement">
+        <field name="role">
+            <bind-xml name="PublishingRole" node="element"/>
+            <alt-xml name="b291"/>
+        </field>
+        <field name="codeType">
+            <bind-xml name="NameCodeType" node="element"/>
+            <alt-xml name="b241"/>
+        </field>
+        <field name="codeTypeName">
+            <bind-xml name="NameCodeTypeName" node="element"/>
+            <alt-xml name="b242"/>
+        </field>
+        <field name="codeValue">
+            <bind-xml name="NameCodeValue" node="element"/>
+            <alt-xml name="b243"/>
+        </field>
+        <field name="name">
+            <bind-xml name="PublisherName" node="element"/>
+            <alt-xml name="b081"/>
+        </field>
+        <field name="webSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="Website" node="element"/>
+            <alt-xml name="website"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixWebsiteElement' -->
+    <class name="OnixWebsiteElement" extends="AbstractOnixElement">
+        <field name="role">
+            <bind-xml name="WebsiteRole" node="element"/>
+            <alt-xml name="b367"/>
+        </field>
+        <field name="details">
+            <bind-xml name="WebsiteDescription" node="element"/>
+            <alt-xml name="b294"/>
+            <alt-xml name="ProductWebsiteDescription"/>
+            <alt-xml name="f170"/>
+        </field>
+        <field name="link">
+            <bind-xml name="WebsiteLink" node="element"/>
+            <alt-xml name="b295"/>
+            <alt-xml name="ProductWebsiteLink"/>
+            <alt-xml name="f123"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixCopyrightElement' -->
+    <class name="OnixCopyrightElement" extends="AbstractOnixElement">
+        <field name="years" collection="array" type="NameElement">
+            <bind-xml name="CopyrightYear" node="element"/>
+            <alt-xml name="b087"/>
+        </field>
+        <field name="owners" collection="array" type="OnixCopyrightOwnerElement">
+            <bind-xml name="CopyrightOwner" node="element"/>
+            <alt-xml name="copyrightowner"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixCopyrightOwnerElement' -->
+    <class name="OnixCopyrightOwnerElement" extends="AbstractOnixElement">
+        <field name="identifier" type="OnixCopyrightOwnerIdentifierElement">
+            <bind-xml name="CopyrightOwnerIdentifier" node="element"/>
+            <alt-xml name="copyrightowneridentifier"/>
+        </field>
+        <field name="personName">
+            <bind-xml name="PersonName" node="element"/>
+            <alt-xml name="b036"/>
+        </field>
+        <field name="corporateName">
+            <bind-xml name="CorporateName" node="element"/>
+            <alt-xml name="b047"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixCopyrightOwnerIdentifierElement' -->
+    <class name="OnixCopyrightOwnerIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="CopyrightOwnerIDType" node="element"/>
+            <alt-xml name="b392"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSalesRightsElement' -->
+    <class name="OnixSalesRightsElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="SalesRightsType" node="element"/>
+            <alt-xml name="b089"/>
+        </field>
+        <field name="country">
+            <bind-xml name="RightsCountry" node="element"/>
+            <alt-xml name="b090"/>
+        </field>
+        <field name="territory">
+            <bind-xml name="RightsTerritory" node="element"/>
+            <alt-xml name="b388"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixNotForSaleElement' -->
+    <class name="OnixNotForSaleElement" extends="AbstractOnixElement">
+        <field name="country">
+            <bind-xml name="RightsCountry" node="element"/>
+            <alt-xml name="b090"/>
+        </field>
+        <field name="territory">
+            <bind-xml name="RightsTerritory" node="element"/>
+            <alt-xml name="b388"/>
+        </field>
+        <field name="identifiers" collection="array" type="OnixProductIdentifierElement">
+            <bind-xml name="ProductIdentifier" node="element"/>
+            <alt-xml name="productidentifier"/>
+        </field>
+        <field name="publisherName">
+            <bind-xml name="PublisherName" node="element"/>
+            <alt-xml name="b081"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSalesRestrictionElement' -->
+    <class name="OnixSalesRestrictionElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="SalesRestrictionType" node="element"/>
+            <alt-xml name="b381"/>
+        </field>
+        <field name="salesOutlets" collection="array" type="OnixSalesOutletElement">
+            <bind-xml name="SalesOutlet" node="element"/>
+            <alt-xml name="salesoutlet"/>
+        </field>
+        <field name="detail">
+            <bind-xml name="SalesRestrictionDetail" node="element"/>
+            <alt-xml name="b383"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSalesOutletElement' -->
+    <class name="OnixSalesOutletElement" extends="AbstractOnixElement">
+        <field name="identifier" type="OnixSalesOutletIdentifierElement">
+            <bind-xml name="SalesOutletIdentifier" node="element"/>
+            <alt-xml name="salesoutletidentifier"/>
+        </field>
+        <field name="name">
+            <bind-xml name="SalesOutletName" node="element"/>
+            <alt-xml name="b382"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSalesOutletIdentifierElement' -->
+    <class name="OnixSalesOutletIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="SalesOutletIDType" node="element"/>
+            <alt-xml name="b393"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixMeasureElement' -->
+    <class name="OnixMeasureElement" extends="AbstractOnixElement">
+        <field name="typeCode">
+            <bind-xml name="MeasureTypeCode" node="element"/>
+            <alt-xml name="c093"/>
+        </field>
+        <field name="measurement">
+            <bind-xml name="Measurement" node="element"/>
+            <alt-xml name="c094"/>
+        </field>
+        <field name="unitCode">
+            <bind-xml name="MeasureUnitCode" node="element"/>
+            <alt-xml name="c095"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixRelatedProductElement' -->
+    <class name="OnixRelatedProductElement" extends="AbstractOnixElement">
+        <field name="code">
+            <bind-xml name="RelationCode" node="element"/>
+            <alt-xml name="h208"/>
+        </field>
+        <field name="identifiers" collection="array" type="OnixProductIdentifierElement">
+            <bind-xml name="ProductIdentifier" node="element"/>
+            <alt-xml name="productidentifier"/>
+        </field>
+        <field name="webSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="Website" node="element"/>
+            <alt-xml name="website"/>
+        </field>
+        <field name="productForm">
+            <bind-xml name="ProductForm" node="element"/>
+            <alt-xml name="b012"/>
+        </field>
+        <field name="productFormDetails" collection="array" type="NameElement">
+            <bind-xml name="ProductFormDetail" node="element"/>
+            <alt-xml name="b333"/>
+        </field>
+        <field name="productFormFeatures" collection="array" type="OnixProductFormFeatureElement">
+            <bind-xml name="ProductFormFeature" node="element"/>
+            <alt-xml name="productformfeature"/>
+        </field>
+        <field name="productPackaging">
+            <bind-xml name="ProductPackaging" node="element"/>
+            <alt-xml name="b225"/>
+        </field>
+        <field name="productFormDescription">
+            <bind-xml name="ProductFormDescription" node="element"/>
+            <alt-xml name="b014"/>
+        </field>
+        <field name="numberOfPieces" type="integer">
+            <bind-xml name="NumberOfPieces" node="element"/>
+            <alt-xml name="b210"/>
+        </field>
+        <field name="tradeCategory">
+            <bind-xml name="TradeCategory" node="element"/>
+            <alt-xml name="b384"/>
+        </field>
+        <field name="productContentType">
+            <bind-xml name="ProductContentType" node="element"/>
+            <alt-xml name="b385"/>
+        </field>
+        <field name="epubType">
+            <bind-xml name="EpubType" node="element"/>
+            <alt-xml name="b211"/>
+        </field>
+        <field name="epubTypeVersion">
+            <bind-xml name="EpubTypeVersion" node="element"/>
+            <alt-xml name="b212"/>
+        </field>
+        <field name="epubTypeDescription">
+            <bind-xml name="EpubTypeDescription" node="element"/>
+            <alt-xml name="b213"/>
+        </field>
+        <field name="epubFormat">
+            <bind-xml name="EpubFormat" node="element"/>
+            <alt-xml name="b214"/>
+        </field>
+        <field name="epubFormatVersion">
+            <bind-xml name="EpubFormatVersion" node="element"/>
+            <alt-xml name="b215"/>
+        </field>
+        <field name="epubFormatDescription">
+            <bind-xml name="EpubFormatDescription" node="element"/>
+            <alt-xml name="b216"/>
+        </field>
+        <field name="epubTypeNote">
+            <bind-xml name="EpubTypeNote" node="element"/>
+            <alt-xml name="b277"/>
+        </field>
+        <field name="publishers" collection="array" type="OnixPublisherElement">
+            <bind-xml name="Publisher" node="element"/>
+            <alt-xml name="publisher"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSupplyDetailElement' -->
+    <class name="OnixSupplyDetailElement" extends="AbstractOnixElement">
+        <field name="eanLocationNumber">
+            <bind-xml name="SupplierEANLocationNumber" node="element"/>
+            <alt-xml name="j135"/>
+        </field>
+        <field name="san">
+            <bind-xml name="SupplierSAN" node="element"/>
+            <alt-xml name="j136"/>
+        </field>
+        <field name="identifiers" collection="array" type="OnixSupplierIdentifierElement">
+            <bind-xml name="SupplierIdentifier" node="element"/>
+            <alt-xml name="supplieridentifier"/>
+        </field>
+        <field name="supplierName">
+            <bind-xml name="SupplierName" node="element"/>
+            <alt-xml name="j137"/>
+        </field>
+        <field name="telephones" collection="array" type="NameElement">
+            <bind-xml name="TelephoneNumber" node="element"/>
+            <alt-xml name="j270"/>
+        </field>
+        <field name="faxes" collection="array" type="NameElement">
+            <bind-xml name="FaxNumber" node="element"/>
+            <alt-xml name="j271"/>
+        </field>
+        <field name="emails" collection="array" type="NameElement">
+            <bind-xml name="EmailAddress" node="element"/>
+            <alt-xml name="j272"/>
+        </field>
+        <field name="webSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="Website" node="element"/>
+            <alt-xml name="website"/>
+        </field>
+        <field name="role">
+            <bind-xml name="SupplierRole" node="element"/>
+            <alt-xml name="j292"/>
+        </field>
+        <field name="supplyToCountries" collection="array" type="NameElement">
+            <bind-xml name="SupplyToCountry" node="element"/>
+            <alt-xml name="j138"/>
+        </field>
+        <field name="supplyToTerritory">
+            <bind-xml name="SupplyToTerritory" node="element"/>
+            <alt-xml name="j397"/>
+        </field>
+        <field name="excludedSupplyToCountries" collection="array" type="NameElement">
+            <bind-xml name="SupplyToCountryExcluded" node="element"/>
+            <alt-xml name="j140"/>
+        </field>
+        <field name="restrictionDetail">
+            <bind-xml name="SupplyRestrictionDetail" node="element"/>
+            <alt-xml name="j399"/>
+        </field>
+        <field name="returnsCodeType">
+            <bind-xml name="ReturnsCodeType" node="element"/>
+            <alt-xml name="j268"/>
+        </field>
+        <field name="returnsCode">
+            <bind-xml name="ReturnsCode" node="element"/>
+            <alt-xml name="j269"/>
+        </field>
+        <field name="lastDateForReturns">
+            <bind-xml name="LastDateForReturns" node="element"/>
+            <alt-xml name="j387"/>
+        </field>
+        <field name="availabilityCode">
+            <bind-xml name="AvailabilityCode" node="element"/>
+            <alt-xml name="j141"/>
+        </field>
+        <field name="productAvailability">
+            <bind-xml name="ProductAvailability" node="element"/>
+            <alt-xml name="j396"/>
+        </field>
+        <field name="intermediaryAvailabilityCode">
+            <bind-xml name="IntermediaryAvailabilityCode" node="element"/>
+            <alt-xml name="j348"/>
+        </field>
+        <field name="newSuppliers" collection="array" type="OnixSupplyDetailElement">
+            <bind-xml name="NewSupplier" node="element"/>
+            <alt-xml name="newsupplier"/>
+        </field>
+        <field name="dateFormat">
+            <bind-xml name="DateFormat" node="element"/>
+            <alt-xml name="j260"/>
+        </field>
+        <field name="expectedShipDate">
+            <bind-xml name="ExpectedShipDate" node="element"/>
+            <alt-xml name="j142"/>
+        </field>
+        <field name="onSaleDate">
+            <bind-xml name="OnSaleDate" node="element"/>
+            <alt-xml name="j143"/>
+        </field>
+        <field name="orderTime" type="integer">
+            <bind-xml name="OrderTime" node="element"/>
+            <alt-xml name="j144"/>
+        </field>
+        <field name="stockQuantities" collection="array" type="OnixStockQuantityElement">
+            <bind-xml name="Stock" node="element"/>
+            <alt-xml name="stock"/>
+        </field>
+        <field name="packQuantity" type="integer">
+            <bind-xml name="PackQuantity" node="element"/>
+            <alt-xml name="j145"/>
+        </field>
+        <field name="audienceRestrictionFlag">
+            <bind-xml name="AudienceRestrictionFlag" node="element"/>
+            <alt-xml name="j146"/>
+        </field>
+        <field name="audienceRestrictionNote">
+            <bind-xml name="AudienceRestrictionNote" node="element"/>
+            <alt-xml name="j147"/>
+        </field>
+        <field name="unpricedItemType">
+            <bind-xml name="UnpricedItemType" node="element"/>
+            <alt-xml name="j192"/>
+        </field>
+        <field name="prices" collection="array" type="OnixSupplyPriceElement">
+            <bind-xml name="Price" node="element"/>
+            <alt-xml name="price"/>
+        </field>
+        <field name="reissueDetails" type="OnixSupplyReissueElement">
+            <bind-xml name="Reissue" node="element"/>
+            <alt-xml name="reissue"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSupplierIdentifierElement' -->
+    <class name="OnixSupplierIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="SupplierIDType" node="element"/>
+            <alt-xml name="j345"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixStockQuantityElement' -->
+    <class name="OnixStockQuantityElement" extends="AbstractOnixElement">
+        <field name="identifiers" collection="array" type="OnixStockQuantityIdentifierElement">
+            <bind-xml name="LocationIdentifier" node="element"/>
+            <alt-xml name="locationidentifier"/>
+        </field>
+        <field name="name">
+            <bind-xml name="LocationName" node="element"/>
+            <alt-xml name="j349"/>
+        </field>
+        <field name="quantityCoded" type="OnixStockQuantityCodedElement">
+            <bind-xml name="StockQuantityCoded" node="element"/>
+            <alt-xml name="stockquantitycoded"/>
+        </field>
+        <field name="onHand" type="integer">
+            <bind-xml name="OnHand" node="element"/>
+            <alt-xml name="j350"/>
+        </field>
+        <field name="onOrder" type="integer">
+            <bind-xml name="OnOrder" node="element"/>
+            <alt-xml name="j351"/>
+        </field>
+        <field name="committedBackOrder" type="integer">
+            <bind-xml name="CBO" node="element"/>
+            <alt-xml name="j375"/>
+        </field>
+        <field name="onOrderDetails" collection="array" type="OnixOnOrderDetailElement">
+            <bind-xml name="OnOrderDetail" node="element"/>
+            <alt-xml name="onorderdetail"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixStockQuantityIdentifierElement' -->
+    <class name="OnixStockQuantityIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="LocationIDType" node="element"/>
+            <alt-xml name="j377"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixStockQuantityCodedElement' -->
+    <class name="OnixStockQuantityCodedElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="StockQuantityCodeType" node="element"/>
+            <alt-xml name="j293"/>
+        </field>
+        <field name="name">
+            <bind-xml name="StockQuantityCodeTypeName" node="element"/>
+            <alt-xml name="j296"/>
+        </field>
+        <field name="code">
+            <bind-xml name="StockQuantityCode" node="element"/>
+            <alt-xml name="j297"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixOnOrderDetailElement' -->
+    <class name="OnixOnOrderDetailElement" extends="AbstractOnixElement">
+        <field name="onOrder" type="integer">
+            <bind-xml name="OnOrder" node="element"/>
+            <alt-xml name="j351"/>
+        </field>
+        <field name="expectedDate">
+            <bind-xml name="ExpectedDate" node="element"/>
+            <alt-xml name="j302"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSupplyPriceElement' -->
+    <class name="OnixSupplyPriceElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="PriceTypeCode" node="element"/>
+            <alt-xml name="j148"/>
+        </field>
+        <field name="qualifier">
+            <bind-xml name="PriceQualifier" node="element"/>
+            <alt-xml name="j261"/>
+        </field>
+        <field name="typeDescription">
+            <bind-xml name="PriceTypeDescription" node="element"/>
+            <alt-xml name="j262"/>
+        </field>
+        <field name="pricePer">
+            <bind-xml name="PricePer" node="element"/>
+            <alt-xml name="j239"/>
+        </field>
+        <field name="minimumOrderQuantity">
+            <bind-xml name="MinimumOrderQuantity" node="element"/>
+            <alt-xml name="j263"/>
+        </field>
+        <field name="batchBonuses" collection="array" type="OnixSupplyPriceBonusElement">
+            <bind-xml name="BatchBonus" node="element"/>
+            <alt-xml name="batchbonus"/>
+        </field>
+        <field name="classOfTrade">
+            <bind-xml name="ClassOfTrade" node="element"/>
+            <alt-xml name="j149"/>
+        </field>
+        <field name="bicDiscountGroupCode">
+            <bind-xml name="BICDiscountGroupCode" node="element"/>
+            <alt-xml name="j150"/>
+        </field>
+        <field name="discountCodes" collection="array" type="OnixSupplyPriceDiscountElement">
+            <bind-xml name="DiscountCoded" node="element"/>
+            <alt-xml name="discountcoded"/>
+        </field>
+        <field name="discountPercent">
+            <bind-xml name="DiscountPercent" node="element"/>
+            <alt-xml name="j267"/>
+        </field>
+        <field name="status">
+            <bind-xml name="PriceStatus" node="element"/>
+            <alt-xml name="j266"/>
+        </field>
+        <field name="amount">
+            <bind-xml name="PriceAmount" node="element"/>
+            <alt-xml name="j151"/>
+        </field>
+        <field name="currencyCode">
+            <bind-xml name="CurrencyCode" node="element"/>
+            <alt-xml name="j152"/>
+        </field>
+        <field name="countries" collection="array" type="NameElement">
+            <bind-xml name="CountryCode" node="element"/>
+            <alt-xml name="b251"/>
+        </field>
+        <field name="territory">
+            <bind-xml name="Territory" node="element"/>
+            <alt-xml name="j303"/>
+        </field>
+        <field name="excludedCountry">
+            <bind-xml name="CountryExcluded" node="element"/>
+            <alt-xml name="j304"/>
+        </field>
+        <field name="excludedTerritory">
+            <bind-xml name="TerritoryExcluded" node="element"/>
+            <alt-xml name="j305"/>
+        </field>
+        <field name="taxRateCode1">
+            <bind-xml name="TaxRateCode1" node="element"/>
+            <alt-xml name="j153"/>
+        </field>
+        <field name="taxRatePercent1">
+            <bind-xml name="TaxRatePercent1" node="element"/>
+            <alt-xml name="j154"/>
+        </field>
+        <field name="taxableAmount1">
+            <bind-xml name="TaxableAmount1" node="element"/>
+            <alt-xml name="j155"/>
+        </field>
+        <field name="taxAmount1">
+            <bind-xml name="TaxAmount1" node="element"/>
+            <alt-xml name="j156"/>
+        </field>
+        <field name="taxRateCode2">
+            <bind-xml name="TaxRateCode2" node="element"/>
+            <alt-xml name="j157"/>
+        </field>
+        <field name="taxRatePercent2">
+            <bind-xml name="TaxRatePercent2" node="element"/>
+            <alt-xml name="j158"/>
+        </field>
+        <field name="taxableAmount2">
+            <bind-xml name="TaxableAmount2" node="element"/>
+            <alt-xml name="j159"/>
+        </field>
+        <field name="taxAmount2">
+            <bind-xml name="TaxAmount2" node="element"/>
+            <alt-xml name="j160"/>
+        </field>
+        <field name="priceEffectiveFrom">
+            <bind-xml name="PriceEffectiveFrom" node="element"/>
+            <alt-xml name="j161"/>
+        </field>
+        <field name="priceEffectiveUntil">
+            <bind-xml name="PriceEffectiveUntil" node="element"/>
+            <alt-xml name="j162"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSupplyPriceBonusElement' -->
+    <class name="OnixSupplyPriceBonusElement" extends="AbstractOnixElement">
+        <field name="quantity" type="integer">
+            <bind-xml name="BatchQuantity" node="element"/>
+            <alt-xml name="j264"/>
+        </field>
+        <field name="freeQuantity" type="integer">
+            <bind-xml name="FreeQuantity" node="element"/>
+            <alt-xml name="j265"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSupplyPriceDiscountElement' -->
+    <class name="OnixSupplyPriceDiscountElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="DiscountCodeType" node="element"/>
+            <alt-xml name="j363"/>
+        </field>
+        <field name="name">
+            <bind-xml name="DiscountCodeTypeName" node="element"/>
+            <alt-xml name="j378"/>
+        </field>
+        <field name="code">
+            <bind-xml name="DiscountCode" node="element"/>
+            <alt-xml name="j364"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixSupplyReissueElement' -->
+    <class name="OnixSupplyReissueElement" extends="AbstractOnixElement">
+        <field name="date">
+            <bind-xml name="ReissueDate" node="element"/>
+            <alt-xml name="j365"/>
+        </field>
+        <field name="details">
+            <bind-xml name="ReissueDescription" node="element"/>
+            <alt-xml name="j366"/>
+        </field>
+        <field name="prices" collection="array" type="OnixSupplyPriceElement">
+            <bind-xml name="Price" node="element"/>
+            <alt-xml name="price"/>
+        </field>
+        <field name="mediaFiles" collection="array" type="OnixMediaFileElement">
+            <bind-xml name="MediaFile" node="element"/>
+            <alt-xml name="mediafile"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixMarketRepresentationElement' -->
+    <class name="OnixMarketRepresentationElement" extends="AbstractOnixElement">
+        <field name="identifiers" collection="array" type="OnixAgentIdentifierElement">
+            <bind-xml name="AgentIdentifier" node="element"/>
+            <alt-xml name="agentidentifier"/>
+        </field>
+        <field name="agentName">
+            <bind-xml name="AgentName" node="element"/>
+            <alt-xml name="j401"/>
+        </field>
+        <field name="telephones" collection="array" type="NameElement">
+            <bind-xml name="TelephoneNumber" node="element"/>
+            <alt-xml name="j270"/>
+        </field>
+        <field name="faxes" collection="array" type="NameElement">
+            <bind-xml name="FaxNumber" node="element"/>
+            <alt-xml name="j271"/>
+        </field>
+        <field name="emails" collection="array" type="NameElement">
+            <bind-xml name="EmailAddress" node="element"/>
+            <alt-xml name="j272"/>
+        </field>
+        <field name="webSites" collection="array" type="OnixWebsiteElement">
+            <bind-xml name="Website" node="element"/>
+            <alt-xml name="website"/>
+        </field>
+        <field name="role">
+            <bind-xml name="AgentRole" node="element"/>
+            <alt-xml name="j402"/>
+        </field>
+        <field name="country">
+            <bind-xml name="MarketCountry" node="element"/>
+            <alt-xml name="j403"/>
+        </field>
+        <field name="territory">
+            <bind-xml name="MarketTerritory" node="element"/>
+            <alt-xml name="j404"/>
+        </field>
+        <field name="excludedCountry">
+            <bind-xml name="MarketCountryExcluded" node="element"/>
+            <alt-xml name="j405"/>
+        </field>
+        <field name="restrictionDetail">
+            <bind-xml name="MarketRestrictionDetail" node="element"/>
+            <alt-xml name="j406"/>
+        </field>
+        <field name="publishingStatus">
+            <bind-xml name="MarketPublishingStatus" node="element"/>
+            <alt-xml name="j407"/>
+        </field>
+        <field name="marketDates" collection="array" type="OnixMarketDateElement">
+            <bind-xml name="MarketDate" node="element"/>
+            <alt-xml name="marketdate"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixAgentIdentifierElement' -->
+    <class name="OnixAgentIdentifierElement" extends="AbstractOnixElement">
+        <field name="type">
+            <bind-xml name="AgentIDType" node="element"/>
+            <alt-xml name="j400"/>
+        </field>
+        <field name="name">
+            <bind-xml name="IDTypeName" node="element"/>
+            <alt-xml name="b233"/>
+        </field>
+        <field name="value">
+            <bind-xml name="IDValue" node="element"/>
+            <alt-xml name="b244"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'OnixMarketDateElement' -->
+    <class name="OnixMarketDateElement" extends="AbstractOnixElement">
+        <field name="role">
+            <bind-xml name="MarketDateRole" node="element"/>
+            <alt-xml name="j408"/>
+        </field>
+        <field name="dateFormat">
+            <bind-xml name="DateFormat" node="element"/>
+            <alt-xml name="j260"/>
+        </field>
+        <field name="date">
+            <bind-xml name="Date" node="element"/>
+            <alt-xml name="b306"/>
+        </field>
+    </class>
+
+</mapping>

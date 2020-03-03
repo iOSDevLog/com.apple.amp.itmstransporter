@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of software elements to objects</description>
+    
+    <!-- mapping for class 'SoftwareAssetsContainerElement' -->
+    <class name="SoftwareAssetsContainerElement" extends="AbstractElement">
+        <field name="appleId"><bind-xml name="apple_id" node="attribute"/></field>
+        <field name="bundleShortVersionString"><bind-xml name="bundle_short_version_string" node="attribute"/></field>
+        <field name="bundleVersion"><bind-xml name="bundle_version" node="attribute"/></field>
+        <field name="bundleIdentifier"><bind-xml name="bundle_identifier" node="attribute"/></field>
+        <field name="platformType"><bind-xml name="app_platform" node="attribute"/></field>
+        <field name="verifiedUnder30" type="Boolean"><bind-xml name="verified_under_3_0" node="attribute"/></field>
+        <field name="verifiedUnder40" type="Boolean"><bind-xml name="verified_under_4_0" node="attribute"/></field>
+        <field name="verifiedUnderVersion"><bind-xml name="verified_under_version" node="attribute"/></field>
+        
+        <field name="assets" collection="array" type="AssetContainerElement"><bind-xml name="asset" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'AccessoryPrototypeContainerElement' -->
+    <class name="AccessoryPrototypeContainerElement" extends="AbstractElement">
+        <field name="contractNumber"><bind-xml name="contract_number" node="element"/></field>
+        <field name="applicationName"><bind-xml name="app_name" node="element"/></field>
+        <field name="accessoryName"><bind-xml name="accessory_name" node="element"/></field>
+        <field name="accessoryDescription"><bind-xml name="accessory_description" node="element"/></field>
+        <field name="notes"><bind-xml name="notes" node="element"/></field>
+        <field name="assets" collection="array" type="AssetContainerElement"><bind-xml name="asset" location="prototype_software_assets" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareContainerElement' -->
+    <class name="SoftwareContainerElement" extends="AbstractElement">
+        <field name="vendorId"><bind-xml name="vendor_id" node="element"/></field>
+        <field name="readOnlyInfo" collection="array" type="SoftwareReadOnlyValueElement">
+            <bind-xml name="read_only_value" location="read_only_info" node="element"/>
+        </field>
+        <field name="metadata" type="SoftwareMetadataElement"><bind-xml name="software_metadata" node="element"/></field>
+        <field name="softwareAssets" collection="array" type="AssetContainerElement">
+            <bind-xml name="asset" location="software_assets" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareMetadataElement' -->
+    <class name="SoftwareMetadataElement" extends="AbstractElement">
+        <field name="appPlatform"><bind-xml name="app_platform" node="attribute"/></field>
+        <field name="versions" collection="array" type="SoftwareVersionElement">
+            <bind-xml name="version" location="versions" node="element"/>
+        </field>
+        <field name="products" collection="array" type="SoftwareProductElement">
+            <bind-xml name="product" location="products" node="element"/>
+        </field>
+        <field name="inAppPurchases" collection="array"><bind-xml name="in_app_purchases" node="element"/></field>
+        <field name="gameCenter" type="SoftwareGameCenterElement"><bind-xml name="game_center" node="element"/></field>
+        <field name="readOnlyInfo" collection="array" type="SoftwareReadOnlyValueElement">
+            <bind-xml name="read_only_value" location="read_only_info" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareProductElement' -->
+    <class name="SoftwareProductElement" extends="AbstractProductElement">
+        <field name="allowVolumeDiscount" type="Boolean"><bind-xml name="allow_volume_discount" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareVersionElement' -->
+    <class name="SoftwareVersionElement" extends="AbstractElement">
+        <field name="versionID"><bind-xml name="string" node="attribute"/></field>
+        <field name="locales" collection="array" type="SoftwareLocaleElement">
+            <bind-xml name="locale" location="locales" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareLocaleElement' -->
+    <class name="SoftwareLocaleElement" extends="LocaleContainerElement">
+        <field name="keywords" collection="array" type="SoftwareLocaleKeywordElement">
+            <bind-xml name="keyword" location="keywords" node="element"/>
+        </field>
+        <field name="whatsNew"><bind-xml name="version_whats_new" node="element"/></field>
+        <field name="softwareURL"><bind-xml name="software_url" node="element"/></field>
+        <field name="privacyURL"><bind-xml name="privacy_url" node="element"/></field>
+        <field name="supportURL"><bind-xml name="support_url" node="element"/></field>
+        <field name="publicationName"><bind-xml name="publication_name" node="element"/></field>
+        <field name="screenshots" collection="array" type="SoftwareScreenshotElement">
+            <bind-xml name="software_screenshot" location="software_screenshots" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareLocaleKeywordElement' -->
+    <class name="SoftwareLocaleKeywordElement" extends="AbstractElement">
+        <field name="value"><bind-xml node="text"/></field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareScreenshotElement' -->
+    <class name="SoftwareScreenshotElement" extends="AssetElement">
+        <field name="displayTarget"><bind-xml name="display_target" node="attribute"/></field>
+        <field name="position" type="integer"><bind-xml name="position" node="attribute"/></field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareReadOnlyValueElement' -->
+    <class name="SoftwareReadOnlyValueElement" extends="AbstractElement">
+        <field name="key"><bind-xml name="key" node="attribute"/></field>
+        <field name="value"><bind-xml node="text"/></field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareInAppPurchaseElement' -->
+    <class name="SoftwareInAppPurchaseElement" extends="AbstractSoftwareInAppPurchaseElement">
+        <map-to xml="in_app_purchase"/>
+        <field name="remove" type="Boolean"><bind-xml name="remove" node="attribute"/></field>
+        <field name="readOnlyInfo" collection="array" type="SoftwareReadOnlyValueElement">
+            <bind-xml name="read_only_value" location="read_only_info" node="element"/>
+        </field>
+        <field name="productId"><bind-xml name="product_id" node="element"/></field>
+        <field name="referenceName"><bind-xml name="reference_name" node="element"/></field>
+        <field name="type"><bind-xml name="type" node="element"/></field>
+        <field name="products" collection="array" type="SoftwareProductElement">
+            <bind-xml name="product" location="products" node="element"/>
+        </field>
+        <!-- these are not in the 5.2 spec but were so deeply rooted in the source that I decided it was too risky to remove them -->
+        <field name="duration"><bind-xml name="duration" node="element"/></field>
+        <field name="freeTrialDuration"><bind-xml name="free_trial_duration" node="element"/></field>
+        <field name="bonusDuration"><bind-xml name="bonus_duration" node="element"/></field>
+        <field name="hasHostedContent" type="Boolean"><bind-xml name="has_hosted_content" node="element"/></field>
+        <field name="softwareAssets" collection="array" type="AssetContainerElement">
+            <bind-xml name="asset" location="software_assets" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareFamilyElement' -->
+    <class name="SoftwareFamilyElement" extends="AbstractSoftwareInAppPurchaseElement">
+        <map-to xml="family"/>
+        <field name="name"><bind-xml node="attribute"/></field>
+        <field name="inAppPurchases" collection="array"/>
+    </class>
+    
+    <!-- mapping for class 'AbstractSoftwareInAppPurchaseElement' -->
+    <class name="AbstractSoftwareInAppPurchaseElement" extends="AbstractElement">
+        <field name="locales" collection="array" type="SoftwareLocaleElement">
+            <bind-xml name="locale" location="locales" node="element"/>
+        </field>
+        <field name="reviewNotes"><bind-xml name="review_notes" node="element"/></field>
+        <field name="reviewScreenshot" type="AssetElement"><bind-xml name="review_screenshot" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'SoftwareGameCenterElement' -->
+    <class name="SoftwareGameCenterElement" extends="AbstractElement">
+        <field name="achievements" collection="array" type="AchievementContainerElement">
+            <bind-xml name="achievement" location="achievements" node="element"/>
+        </field>
+        <field name="leaderboards" collection="array" type="LeaderboardContainerElement">
+            <bind-xml name="leaderboard" location="leaderboards" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'AchievementContainerElement' -->
+    <class name="AchievementContainerElement" extends="AbstractElement">
+        <field name="position" type="integer"><bind-xml name="position" node="attribute"/></field>
+        <field name="remove" type="Boolean"><bind-xml name="remove" node="attribute"/></field>
+        <field name="achievementID"><bind-xml name="achievement_id" node="element"/></field>
+        <field name="referenceName"><bind-xml name="reference_name" node="element"/></field>
+        <field name="points" type="integer"><bind-xml name="points" node="element"/></field>
+        <field name="hidden" type="Boolean"><bind-xml name="hidden" node="element"/></field>
+        <field name="reusable" type="Boolean"><bind-xml name="reusable" node="element"/></field>
+        <field name="locales" collection="array" type="AchievementLocaleElement">
+            <bind-xml name="locale" location="locales" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'AchievementLocaleElement' -->
+    <class name="AchievementLocaleElement" extends="LocaleContainerElement">
+        <field name="beforeEarnedDescription"><bind-xml name="before_earned_description" node="element"/></field>
+        <field name="afterEarnedDescription"><bind-xml name="after_earned_description" node="element"/></field>
+        <field name="afterEarnedAchievementImage" type="AssetElement">
+            <bind-xml name="achievement_after_earned_image" location="achievement_after_earned_image" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'LeaderboardContainerElement' -->
+    <class name="LeaderboardContainerElement" extends="AbstractElement">
+        <field name="isDefault" type="Boolean"><bind-xml name="default" node="attribute"/></field>
+        <field name="position" type="integer"><bind-xml name="position" node="attribute"/></field>
+        <field name="remove" type="Boolean"><bind-xml name="remove" node="attribute"/></field>
+        <field name="leaderboardID"><bind-xml name="leaderboard_id" node="element"/></field>
+        <field name="referenceName"><bind-xml name="reference_name" node="element"/></field>
+        <field name="parentLeaderboard"><bind-xml name="aggregate_parent_leaderboard" node="element"/></field>
+        <field name="sortAscending" type="Boolean"><bind-xml name="sort_ascending" node="element"/></field>
+        <field name="scoreRangeMin" type="integer"><bind-xml name="score_range_min" node="element"/></field>
+        <field name="scoreRangeMax" type="integer"><bind-xml name="score_range_max" node="element"/></field>
+        <field name="locales" collection="array" type="LeaderboardLocaleElement">
+            <bind-xml name="locale" location="locales" node="element"/>
+        </field>
+    </class>
+    
+    <!-- mapping for class 'LeaderboardLocaleElement' -->
+    <class name="LeaderboardLocaleElement" extends="LocaleContainerElement">
+        <field name="formatterSuffix"><bind-xml name="formatter_suffix" node="element"/></field>
+        <field name="formatterSuffixSingular"><bind-xml name="formatter_suffix_singular" node="element"/></field>
+        <field name="formatterType"><bind-xml name="formatter_type" node="element"/></field>
+        <field name="leaderboardImage" type="AssetElement">
+            <bind-xml name="leaderboard_image" location="leaderboard_image" node="element"/>
+        </field>
+    </class>
+
+</mapping>

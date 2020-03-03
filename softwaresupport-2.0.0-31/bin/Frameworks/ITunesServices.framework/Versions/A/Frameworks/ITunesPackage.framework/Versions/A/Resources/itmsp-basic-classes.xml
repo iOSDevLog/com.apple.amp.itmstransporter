@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of basic elements to objects</description>
+    
+    <!-- mapping for class 'AbstractElement' -->
+    <class name="AbstractElement">
+        <field name="id"/>
+    </class>
+
+    <!-- mapping for class 'AbstractSalableElement' -->
+    <class name="AbstractSalableElement" extends="AbstractElement">
+        <field name="vendorId">
+            <bind-xml name="vendor_id" node="element"/>
+            <alt-xml name="vendor_identifier"/>
+        </field>
+        <field name="xid" type="XidElement"><bind-xml name="xid" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'AbstractCopyrightableElement' -->
+    <class name="AbstractCopyrightableElement" extends="AbstractSalableElement">
+        <field name="genres" collection="array" type="GenreElement">
+            <bind-xml name="genre" location="genres" node="element"/>
+            <alt-xml name="genre" location="track_genres"/>
+            <alt-xml name="genre" location="album_genres"/>
+        </field>
+        <field name="artists" collection="array" type="ArtistElement">
+            <bind-xml name="artist" location="artists" node="element"/>
+            <alt-xml name="artist" location="track_artists"/>
+            <alt-xml name="artist" location="album_artists"/>
+        </field>
+        <field name="copyrightPline">
+            <bind-xml name="copyright_pline" node="element"/>
+            <alt-xml name="track_copyright_pline"/>
+            <alt-xml name="album_copyright_pline"/>
+        </field>
+        <field name="copyrightCline">
+            <bind-xml name="copyright_cline" node="element"/>
+            <alt-xml name="track_copyright_cline"/>
+            <alt-xml name="album_copyright_cline"/>
+        </field>
+        <field name="vendorOfferCode"><bind-xml name="vendor_offer_code" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'XidElement' -->
+    <class name="XidElement" extends="AbstractElement">
+        <field name="scheme"><bind-xml node="attribute"/></field>
+        <field name="xid"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'LocalizedStringElement' -->
+    <class name="LocalizedStringElement" extends="AbstractElement">
+        <field name="translation"><bind-xml node="attribute"/></field>
+        <field name="locale"><bind-xml node="attribute"/></field>
+        <field name="value"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'AttributeElement' -->
+    <class name="AttributeElement" extends="AbstractElement">
+        <field name="name"><bind-xml node="attribute"/></field>
+        <field name="value"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'NameElement' -->
+    <class name="NameElement" extends="AbstractElement">
+        <field name="name"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'ChecksumElement' -->
+    <class name="ChecksumElement" extends="AbstractElement">
+        <field name="type"><bind-xml node="attribute"/></field>
+        <field name="value"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'AssetElement' -->
+    <class name="AssetElement" extends="AbstractElement">
+        <field name="type"><bind-xml node="attribute"/></field>
+        <field name="role"><bind-xml node="attribute"/></field>
+        <field name="remove"><bind-xml node="attribute"/></field>
+        <field name="locale" type="LocaleContainerElement"><bind-xml name="locale" node="element"/></field>
+        <field name="file"><bind-xml name="file_name" node="element"/></field>
+        <field name="size" type="integer"><bind-xml name="size" node="element"/></field>
+        <field name="checksum" type="ChecksumElement"><bind-xml name="checksum" node="element"/></field>
+        <field name="attributes" collection="array" type="AttributeElement"><bind-xml name="attribute" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'AssetOnlyContainerElement' -->
+    <class name="AssetOnlyContainerElement" extends="AbstractElement">
+        <field name="mediaType"><bind-xml name="media_type" node="attribute"/></field>
+        <field name="vendorId"><bind-xml name="vendor_id" node="attribute"/></field>
+        <field name="assets" collection="array" type="AssetContainerElement"><bind-xml name="asset" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'AssetContainerElement' -->
+    <class name="AssetContainerElement" extends="AbstractElement">
+        <field name="type"><bind-xml node="attribute"/></field>
+        <field name="productId"><bind-xml name="product_id" node="attribute"/></field>
+        <field name="territories" collection="array" type="NameElement"><bind-xml name="territory" location="territories" node="element"/></field>
+        <field name="dataFiles" collection="array" type="AssetElement"><bind-xml name="data_file" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'LocaleContainerElement' -->
+    <class name="LocaleContainerElement" extends="AbstractElement">
+        <field name="name"><bind-xml node="attribute"/></field>
+        <field name="title"><bind-xml name="title" node="element"/></field>
+        <field name="synopsis"><bind-xml name="synopsis" node="element"/></field>
+        <field name="defaultValue" type="Boolean"><bind-xml name="default" node="attribute"/></field>
+        <field name="remove" type="Boolean"><bind-xml node="attribute"/></field>
+        <field name="contentDescription"><bind-xml name="description" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'ScreenshotAssetElement' -->
+    <class name="ScreenshotAssetElement" extends="AssetElement" />
+
+    <!-- mapping for class 'AbstractProductElement' -->
+    <class name="AbstractProductElement" extends="AbstractElement">
+        <field name="territory"><bind-xml node="element"/></field>
+        <field name="wholesalePriceTier"><bind-xml name="wholesale_price_tier" node="element"/></field>
+        <field name="preorderWholesalePriceTier"><bind-xml name="preorder_wholesale_price_tier" node="element"/></field>
+        <field name="salesStartDate"><bind-xml name="sales_start_date" node="element"/></field>
+        <field name="salesEndDate"><bind-xml name="sales_end_date" node="element"/></field>
+        <field name="preorderSalesStartDate"><bind-xml name="preorder_sales_start_date" node="element"/></field>
+        <field name="clearedForSale" type="Boolean"><bind-xml name="cleared_for_sale" node="element"/></field>
+        <field name="bundleOnly" type="Boolean"><bind-xml name="bundle_only" node="element"/></field>
+        <field name="intervals" collection="array" type="ProductIntervalElement"><bind-xml name="interval" location="intervals" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'ProductIntervalElement' -->
+    <class name="ProductIntervalElement" extends="AbstractElement">
+        <field name="startDate"><bind-xml name="start_date" node="element"/></field>
+        <field name="endDate"><bind-xml name="end_date" node="element"/></field>
+        <field name="wholesalePriceTier"><bind-xml name="wholesale_price_tier" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'GenreElement' -->
+    <class name="GenreElement" extends="NameElement">
+        <field name="code"><bind-xml node="attribute"/></field>
+    </class>
+
+</mapping>

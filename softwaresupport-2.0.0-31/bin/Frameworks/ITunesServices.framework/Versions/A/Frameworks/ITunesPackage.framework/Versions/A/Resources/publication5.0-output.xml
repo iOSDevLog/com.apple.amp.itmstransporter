@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of publication elements to objects</description>
+    
+    <include href="onix2.1-output.xml"/>
+    
+    <!-- mapping for class 'BookAssetContainerElement' -->
+    <class name="BookAssetContainerElement" extends="AssetContainerElement">
+        <field name="appliesToVersion"><bind-xml name="applies_to_version" node="attribute"/></field>
+    </class>
+
+    <!-- mapping for class 'BookContainerElement' -->
+    <class name="BookContainerElement" extends="AbstractSalableElement">
+        <field name="metadata" type="BookMetadataElement"><bind-xml name="metadata" node="element"/></field>
+        <field name="assets" collection="array" type="BookAssetContainerElement"><bind-xml name="asset" location="assets" node="element"/></field>
+        <field name="holdVersionForPreview" type="Boolean"><bind-xml name="hold_version_for_preview" location="assets" node="attribute"/></field>
+    </class>
+    
+    <!-- mapping for class 'BookVersionElement' -->
+    <class name="BookVersionElement" extends="AbstractElement">
+        <field name="appliesToVersion"><bind-xml name="applies_to_version" node="attribute"/></field>
+        <field name="value"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'BookMetadataElement' -->
+    <class name="BookMetadataElement" extends="AbstractElement">
+        <field name="publicationType"><bind-xml name="publication_type" node="element"/></field>
+        <field name="identifiers" collection="array" type="BookIdentifierElement"><bind-xml name="identifier" location="identifiers" node="element"/></field>
+        <field name="relatedContentItems" collection="array" type="BookRelatedContentElement"><bind-xml name="related_item" location="related_content" node="element"/></field>
+        <field name="series" collection="array" type="BookSeriesElement"><bind-xml name="series" location="series_info" node="element"/></field>
+        <field name="title"><bind-xml node="element"/></field>
+        <field name="phoneticTitle"><bind-xml name="phonetic_title" node="element"/></field>
+        <field name="subtitle"><bind-xml node="element"/></field>
+        <field name="phoneticSubtitle"><bind-xml name="phonetic_subtitle" node="element"/></field>
+        <field name="contributors" collection="array" type="BookContributorElement"><bind-xml name="contributor" location="contributors" node="element"/></field>
+        <field name="languages" collection="array" type="BookLanguageElement"><bind-xml name="language" location="languages" node="element"/></field>
+        <field name="numberOfPages"><bind-xml name="number_of_pages" node="element"/></field>
+        <field name="subjects" collection="array" type="BookSubjectElement"><bind-xml name="subject" location="subjects" node="element"/></field>
+        <field name="contentDescription" type="BookDescriptionElement"><bind-xml name="description" node="element"/></field>        
+        <field name="imprint"><bind-xml node="element"/></field>
+        <field name="publisher"><bind-xml node="element"/></field>
+        <field name="preorderPreviews" type="Boolean"><bind-xml name="preorder_previews" node="element"/></field>
+        <field name="explicitContent" type="Boolean"><bind-xml name="explicit" node="element"/></field>
+        <field name="publicationDate"><bind-xml name="publication_date" node="element"/></field>
+        <field name="embed" type="BookEmbedElement"><bind-xml name="embed" node="element"/></field>
+        <field name="products" collection="array" type="BookProductElement"><bind-xml name="product" location="products" node="element"/></field>
+        <field name="audiences" collection="array" type="BookAudienceElement"><bind-xml name="audience" location="audience_info" node="element"/></field>
+        <field name="versionWhatsNew" type="BookVersionElement"><bind-xml name="version_whats_new" node="element"/></field>
+        <field name="multitouchExpected" type="Boolean"><bind-xml name="multi_touch_expected" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'BookIdentifierElement' -->
+    <class name="BookIdentifierElement" extends="AbstractElement">
+        <field name="scheme"><bind-xml node="attribute"/></field>
+        <field name="identifier"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'BookRelatedContentElement' -->
+    <class name="BookRelatedContentElement" extends="AbstractElement">
+        <field name="type"><bind-xml node="attribute"/></field>
+        <field name="identifiers" collection="array" type="BookIdentifierElement"><bind-xml name="identifier" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'BookSeriesElement' -->
+    <class name="BookSeriesElement" extends="AbstractElement">
+        <field name="title"><bind-xml node="element"/></field>
+        <field name="phoneticTitle"><bind-xml name="phonetic_title" node="element"/></field>
+        <field name="sequenceNumber"><bind-xml name="sequence_number" node="element"/></field>
+        <field name="sequenceDisplayString"><bind-xml name="sequence_display_string" node="element"/></field>
+    	<field name="sequenceSuppressed" type="Boolean"><bind-xml name="suppress" location="sequence_display_string" node="attribute"/></field>
+	</class>
+    
+    <!-- mapping for class 'BookContributorElement' -->
+    <class name="BookContributorElement" extends="AbstractElement">
+        <field name="primary" type="Boolean"><bind-xml node="element"/></field>
+        <field name="name"><bind-xml node="element"/></field>
+        <field name="phoneticName"><bind-xml name="phonetic_name" node="element"/></field>
+        <field name="sortName"><bind-xml name="sort_name" node="element"/></field>
+        <field name="appleId" type="integer"><bind-xml name="apple_id" node="element"/></field>
+        <field name="roles" collection="array" type="NameElement"><bind-xml name="role" location="roles" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'BookLanguageElement' -->
+    <class name="BookLanguageElement" extends="AbstractElement">
+        <field name="type"><bind-xml node="attribute"/></field>
+        <field name="language"><bind-xml node="text"/></field>
+    </class>
+    
+    <!-- mapping for class 'BookSubjectElement' -->
+    <class name="BookSubjectElement" extends="AbstractElement">
+        <field name="primary" type="Boolean"><bind-xml node="attribute"/></field>
+        <field name="scheme"><bind-xml node="attribute"/></field>
+        <field name="subject"><bind-xml node="text"/></field>
+    </class>
+    
+    <!-- mapping for class 'BookDescriptionElement' -->
+    <class name="BookDescriptionElement" extends="AbstractElement">
+        <field name="format"><bind-xml node="attribute"/></field>
+        <field name="content"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'BookProductElement' -->
+    <class name="BookProductElement" extends="AbstractElement">
+        <field name="territory"><bind-xml node="element"/></field>
+        <field name="clearedForSale" type="Boolean"><bind-xml name="cleared_for_sale" node="element"/></field>
+        <field name="wholesalePriceTier">
+            <bind-xml name="price_tier" node="element"/>
+            <alt-xml name="wholesale_price_tier"/>
+        </field>
+        <field name="releaseType"><bind-xml name="release_type" node="element"/></field>
+        <field name="preorderSalesStartDate"><bind-xml name="preorder_sales_start_date" node="element"/></field>
+        <field name="salesStartDate"><bind-xml name="sales_start_date" node="element"/></field>
+        <field name="salesEndDate"><bind-xml name="sales_end_date" node="element"/></field>
+        <field name="physicalListPrice" type="BookPricingElement">
+            <bind-xml name="physical_list_price" node="element"/>
+            <alt-xml name="suggested_retail_price"/>
+        </field>
+        <field name="drmFree" type="Boolean"><bind-xml name="drm_free" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'BookPricingElement' -->
+    <class name="BookPricingElement" extends="AbstractElement">
+        <field name="currency"><bind-xml node="attribute"/></field>
+        <field name="price"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'BookEmbedElement' -->
+    <class name="BookEmbedElement" extends="AbstractElement">
+        <field name="format"><bind-xml node="attribute"/></field>
+        <field name="content" collection="array"/>
+    </class>
+
+        <!-- mapping for class 'BookAudienceElement' -->
+    <class name="BookAudienceElement" extends="AbstractElement">
+        <field name="scheme"><bind-xml node="attribute"/></field>
+        <field name="value"><bind-xml node="element"/></field>
+        <field name="range" type="BookAudienceRangeElement"><bind-xml node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'BookAudienceRangeElement' -->
+    <class name="BookAudienceRangeElement" extends="AbstractElement">
+        <field name="minValue"><bind-xml name="min_value" node="element"/></field>
+        <field name="maxValue"><bind-xml name ="max_value" node="element"/></field>
+    </class>
+
+</mapping>

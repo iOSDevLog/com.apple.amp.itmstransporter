@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>asset</key>
+	<dict>
+		<key>version</key>
+		<string>film3.3.1</string>
+	</dict>
+	<key>freePublication</key>
+	<dict>
+		<key>version</key>
+		<string>publication5.0</string>
+	</dict>
+	<key>music</key>
+	<dict>
+		<key>version</key>
+		<string>music5.1</string>
+	</dict>
+	<key>publication</key>
+	<dict>
+		<key>version</key>
+		<string>publication5.0</string>
+	</dict>
+	<key>ringtone</key>
+	<dict>
+		<key>version</key>
+		<string>music5.1</string>
+	</dict>
+	<key>softwareIAP</key>
+	<dict>
+		<key>version</key>
+		<string>software5.4</string>
+	</dict>
+</dict>
+</plist>

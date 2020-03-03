@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of package elements to objects</description>
+    
+    <!-- Some of these are the same input/output.  This is intentional -->
+    <include href="itmsp-basic-classes.xml"/>
+    <include href="music5.1-output.xml"/>
+    <include href="film3.3.1-output.xml"/>
+    <include href="software5.4-output.xml"/>
+    <include href="bulk4.3-output.xml"/>
+    <include href="publication5.0-output.xml"/>
+    <include href="artist5.1-output.xml"/>
+
+    <!-- mapping for class 'PackageElement' -->
+    <class name="PackageElement" extends="AbstractElement">
+        <map-to xml="package" ns-uri="http://apple.com/itunes/importer"/>
+        <field name="version"><bind-xml node="attribute"/></field>
+        <field name="type"><bind-xml node="attribute"/></field>
+        <field name="generator"><bind-xml name="generator" node="attribute"/></field>
+        <field name="generatorVersion"><bind-xml name="generator_version" node="attribute"/></field>
+        <field name="metadataToken"><bind-xml name="metadata_token" node="element"/></field>
+        <field name="language"><bind-xml node="element"/></field>
+        <field name="provider"><bind-xml node="element"/></field>
+        <field name="teamId"><bind-xml name="team_id" node="element"/></field>
+        <field name="packageId"><bind-xml name="package_id" node="element"/></field>
+        <field name="album" type="AlbumElement"><bind-xml node="element"/></field>
+        <field name="video" type="VideoElement"><bind-xml node="element"/></field>
+        <field name="assets" type="AssetOnlyContainerElement"><bind-xml name="assets" node="element"/></field>
+        <field name="softwareAssets" type="SoftwareAssetsContainerElement"><bind-xml name="software_assets" node="element"/></field>
+        <field name="software" type="SoftwareContainerElement"><bind-xml name="software" node="element"/></field>
+        <field name="accessoryPrototypeApp" type="AccessoryPrototypeContainerElement"><bind-xml name="accessory_prototype_app" node="element"/></field>
+        <field name="bulk" type="BulkContainerElement"><bind-xml name="bulk_data_files" node="element"/></field>
+        <field name="book" type="BookContainerElement"><bind-xml name="book" node="element"/></field>
+        <field name="artist" type="ArtistPackageElement"><bind-xml name="artist" node="element"/></field>
+    </class>
+
+</mapping>

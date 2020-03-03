@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="software5.4" xmlns="http://apple.com/itunes/importer">
+    <software_assets apple_id="@@AppleID@@"
+        bundle_short_version_string="@@CFBundleShortVersionString@@"
+        bundle_version="@@CFBundleVersion@@"
+        bundle_identifier="@@CFBundleIdentifier@@"
+        app_platform="@@PlatformType@@">
+        <asset type="product-archive">
+            <data_file>
+                <file_name>@@Filename@@</file_name>
+                <checksum type="md5">@@Checksum@@</checksum>
+                <size>@@Size@@</size>
+            </data_file>
+        </asset>
+    </software_assets>
+</package>

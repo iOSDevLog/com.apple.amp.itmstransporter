@@ -1,0 +1,469 @@
+/* Error message: Image with filename $1 has inappropriate dimensions, which are $2 (height) by $3 (width). The image must have dimensions described by $4, which has a format of %ux%u or can have hyphens %u-%ux%u-%u (exs: 500x500, 500x800-900, 300-400x800-900). */
+"%@: icon dimensions (%u x %u) don't meet the size requirements.  The icon file must be %@ pixels, in .png format" = "%1$@: icon dimensions (%2$u x %3$u) don't meet the size requirements.  The icon file must be %4$@ pixels, in .png format";
+
+/* Error message: Image with filename $1 doesn't have the right device format. */
+"%@: icon is not in the proper device format.  The icon file must be built with COMPRESS_PNG_FILES enabled" = "%@: icon is not in the proper device format.  The icon file must be built with COMPRESS_PNG_FILES enabled";
+
+/* Error message: Image with filename $1 could not be extracted. Reason given is $2. */
+"%@: unable to extract icon: %@" = "%1$@: unable to extract icon: %2$@";
+
+/* catch all format when class is not known $1 is the class name */
+"a %@" = "a %@";
+
+/* dictionary plist class used in error messages */
+"a dictionary" = "a dictionary";
+
+/* number plist class used in error messages */
+"a number" = "a number";
+
+/* string plist class used in error messages */
+"a string" = "a string";
+
+/* array plist class used in error messages */
+"an array" = "an array";
+
+/* skipped, feedback message
+   skipping, feedback message */
+"API analysis file too large, skipping analysis" = "API analysis file too large, skipping analysis";
+
+/* completed status message */
+"App Store Connect product verified" = "App Store Connect product verified";
+
+/* Error message when connecting to App Store. */
+"App Store operation failed." = "App Store operation failed.";
+
+/* Error message when an expected directory is not a directory, $1 is the path */
+"Application support area is not a directory: %@" = "Application support area is not a directory: %@";
+
+/* Error message when the application support directory is not writable, $1 is the path */
+"Application support area is not writable: %@" = "Application support area is not writable: %@";
+
+/* Archive extracted
+   status message */
+"Archive extracted." = "Archive extracted.";
+
+/* Cancelled extraction
+   status message */
+"Archive extraction cancelled" = "Archive extraction cancelled";
+
+/* User option to authenticate client */
+"Authenticate client" = "Authenticate client";
+
+/* Status message authenticated client */
+"Authenticated client" = "Authenticated client";
+
+/* Status message when authenticating client */
+"Authenticating client" = "Authenticating client";
+
+/* Cancelled API file creation */
+"Cancelled creation of App Store Connect API analysis file" = "Cancelled creation of App Store Connect API analysis file";
+
+/* status message */
+"Copying media to the package..." = "Copying media to the package...";
+
+/* Couldn't create the package. $1 is the name of a replaceable token */
+"Could not create a package for notarization. Expected token in metadata.xml template not found: %@" = "Could not create a package for notarization. Expected token in metadata.xml template not found: %@";
+
+/* Couldn't create the package. $1 is the name of a replaceable token */
+"Could not create App Store package. Expected token in metadata.xml template not found: %@" = "Could not create App Store package. Expected token in metadata.xml template not found: %@";
+
+/* Error message when failed to find CFBundlePackageType in info plist or the info plist is missing. */
+"Could not find a CFBundlePackageType within the Info.plist; or the package is missing an Info.plist." = "Could not find a CFBundlePackageType within the Info.plist; or the package is missing an Info.plist.";
+
+/* Error shown if we can't find the app by its bundle id in the store. */
+"Could not find an application matching bundle identifier: %@. Make sure you have created the application in App Store Connect." = "Could not find an application matching bundle identifier: %@. Make sure you have created the application in App Store Connect.";
+
+/* Error message when an application matching the bundle id cannot be found in App Store Connect, $1 is the bundle id
+   Error message when uploading an application archive doesn't have a matching bundle id, $1 is the bundle id */
+"Could not find an application matching CFBundleIdentifier: %@. Make sure you have created the application in App Store Connect." = "Could not find an application matching CFBundleIdentifier: %@. Make sure you have created the application in App Store Connect.";
+
+/* file path $1 not found */
+"Could not find swinfo because the path '%@' does not exist." = "Could not find swinfo because the path '%@' does not exist.";
+
+/* file path $1 not a directory */
+"Could not find swinfo because the path '%@' is not a directory." = "Could not find swinfo because the path '%@' is not a directory.";
+
+/* file path $1 not a directory */
+"Could not find swinfo because the software update file could not be found." = "Could not find swinfo because the software update file could not be found.";
+
+/* file path $1 not a directory */
+"Could not find swinfo because there was a problem with the file '%@': %@." = "Could not find swinfo because there was a problem with the file '%1$@': %2$@.";
+
+/* File not found in file path $1 */
+"Could not find swinfo in path '%@'." = "Could not find swinfo in path '%@'.";
+
+/* Error shown if the main bundle identifier could not be discerned. */
+"Could not find the main bundle or the Info.plist is missing a CFBundleIdentifier in '%@'." = "Could not find the main bundle or the Info.plist is missing a CFBundleIdentifier in '%@'.";
+
+/* status message */
+"Create a package for notarization" = "Create a package for notarization";
+
+/* status message */
+"Create an App Store package" = "Create an App Store package";
+
+/* Create App Store Connect API analysis file */
+"Create App Store Connect API analysis file" = "Create App Store Connect API analysis file";
+
+/* API file created */
+"Created App Store Connect API analysis file" = "Created App Store Connect API analysis file";
+
+/*  creating API file */
+"Creating App Store Connect API analysis file…" = "Creating App Store Connect API analysis file…";
+
+/* status message */
+"Creating App Store package..." = "Creating App Store package...";
+
+/* status message */
+"Creating package for notarization..." = "Creating package for notarization...";
+
+/* status message */
+"Creation of App Store package cancelled" = "Creation of App Store package cancelled";
+
+/* status message */
+"Extracting archive" = "Extracting archive";
+
+/* status message */
+"Extracting archive..." = "Extracting archive...";
+
+/* initial feedback message */
+"Fetch software codesign parameters." = "Fetch software codesign parameters.";
+
+/* $1 (an integer) number of in-app purchase records were fetched successfully */
+"Fetched %@ in-app purchases" = "Fetched %@ in-app purchases";
+
+/* completed feedback message $1 is the number of apps */
+"Fetched %@ software applications with hosted content" = "Fetched %@ software applications with hosted content";
+
+/* completed feedback message $1 is number of apps */
+"Fetched %@ software versions" = "Fetched %@ software versions";
+
+/* completed feedback message $1 is number of WWDR Teams */
+"Fetched %@ WWDR teams" = "Fetched %@ WWDR teams";
+
+/* completed feedback message */
+"Fetched configuration for submission for the application with the bundle id %@" = "Fetched configuration for submission for the application with the bundle id %@";
+
+/* completed feedback message */
+"Fetched generic configuration for submission" = "Fetched generic configuration for submission";
+
+/* completed feedback message */
+"Fetched software" = "Fetched software";
+
+/* completed feedback message */
+"Fetched software codesign parameters." = "Fetched software codesign parameters.";
+
+/* running feedback message */
+"Fetching software codesign parameters..." = "Fetching software codesign parameters...";
+
+/* status messsage, $1 is destination directory */
+"Generated package: %@" = "Generated package: %@";
+
+/* status message */
+"Generating metadata..." = "Generating metadata...";
+
+/* Status message while getting the list of providers information. */
+"Get list of providers information." = "Get list of providers information.";
+
+/* Status message while getting the list of providers information. */
+"Getting list of providers information..." = "Getting list of providers information...";
+
+/* Status message after getting the list of providers information. */
+"Got list of providers information." = "Got list of providers information.";
+
+/* shown when delivering an app to indicate the platform */
+"In-App Purchase" = "In-App Purchase";
+
+/* error message if required class is not present */
+"Info.plist: %@ must be present." = "Info.plist: %@ must be present.";
+
+/* error message if value is of the wrong class */
+"Info.plist: Unexpected value for key: %@ is not %@." = "Info.plist: Unexpected value for key: %1$@ is not %2$@.";
+
+/* Error message when connecting to App Store. */
+"Invalid result returned from the allowed platforms service" = "Invalid result returned from the allowed platforms service";
+
+/* shown when delivering an app to indicate the platform */
+"iOS App" = "iOS App";
+
+/* initial feedback message */
+"List WWDR teams" = "List WWDR teams";
+
+/* running feedback message */
+"Listing WWDR teams..." = "Listing WWDR teams...";
+
+/* initial feedback message */
+"Log to message Splunk" = "Log to message Splunk";
+
+/* completed feedback message */
+"Logged message to Splunk" = "Logged message to Splunk";
+
+/* running feedback message */
+"Logging message to Splunk..." = "Logging message to Splunk...";
+
+/* initial feedback message with bundle id */
+"Look up configuration for submission for the application with the bundle id %@" = "Look up configuration for submission for the application with the bundle id %@";
+
+/* initial feedback message */
+"Look up DSYM URLs for metadata on App Store Connect" = "Look up DSYM URLs for metadata on App Store Connect";
+
+/* running feedback message */
+"Look up DSYM URLs for metadata on App Store Connect…" = "Look up DSYM URLs for metadata on App Store Connect…";
+
+/* initial feedback message */
+"Look up DSYM URLs for software version on App Store Connect" = "Look up DSYM URLs for software version on App Store Connect";
+
+/* running feedback message */
+"Look up DSYM URLs for software version on App Store Connect…" = "Look up DSYM URLs for software version on App Store Connect…";
+
+/* initial feedback message */
+"Look up generic configuration for submission" = "Look up generic configuration for submission";
+
+/* initial feedback message */
+"Look up in-app purchases with content hosted on App Store Connect" = "Look up in-app purchases with content hosted on App Store Connect";
+
+/* initial feedback message */
+"Look up software applications with hosted content on App Store Connect" = "Look up software applications with hosted content on App Store Connect";
+
+/* initial feedback message */
+"Look up software on App Store Connect" = "Look up software on App Store Connect";
+
+/* initial feedback message */
+"Look up software versions on App Store Connect" = "Look up software versions on App Store Connect";
+
+/* initial feedback message */
+"Look up symbol URLs for software version on App Store Connect" = "Look up symbol URLs for software version on App Store Connect";
+
+/* running feedback message */
+"Look up symbol URLs for software version on App Store Connect…" = "Look up symbol URLs for software version on App Store Connect…";
+
+/* running feedback message */
+"Looking up configuration for submission for the application with the bundle id %@..." = "Looking up configuration for submission for the application with the bundle id %@...";
+
+/* running feedback message */
+"Looking up generic configuration for submission..." = "Looking up generic configuration for submission...";
+
+/* running feedback message */
+"Looking up in-app purchases with content hosted on App Store Connect…" = "Looking up in-app purchases with content hosted on App Store Connect…";
+
+/* running feedback message */
+"Looking up software applications with hosted content on App Store Connect…" = "Looking up software applications with hosted content on App Store Connect…";
+
+/* running feedback message */
+"Looking up software on App Store Connect…" = "Looking up software on App Store Connect…";
+
+/* running feedback message */
+"Looking up software versions on App Store Connect…" = "Looking up software versions on App Store Connect…";
+
+/* shown when delivering an app to indicate the platform */
+"macOS App" = "macOS App";
+
+/* status message */
+"Notarization package creation cancelled" = "Notarization package creation cancelled";
+
+/* status message */
+"Plist extracted." = "Plist extracted.";
+
+/* cancelled status message */
+"Product verification cancelled" = "Product verification cancelled";
+
+/* User feedback message */
+"Received API usage information from App Store Connect, processing…" = "Received API usage information from App Store Connect, processing…";
+
+/* User feedback message */
+"Receiving API usage information from App Store Connect…" = "Receiving API usage information from App Store Connect…";
+
+/* Status message while getting allowed platforms list from server */
+"Retrieve list of allowed platforms." = "Retrieve list of allowed platforms.";
+
+/* Status message while getting the history of Developer ID+ requests from the server */
+"Retrieve notarization history." = "Retrieve notarization history.";
+
+/* Status message while getting the status of a package uploaded for Developer ID+ evaluation from server */
+"Retrieve status of a package uploaded for notarization." = "Retrieve status of a package uploaded for notarization.";
+
+/* Status message after getting allowed platforms list from server. */
+"Retrieved list of allowed platforms..." = "Retrieved list of allowed platforms...";
+
+/* Status message after getting the history of Developer ID+ requests from server. */
+"Retrieved notarization history..." = "Retrieved notarization history...";
+
+/* Status message after getting the status of a package uploaded for Developer ID+ evaluation from server. */
+"Retrieved status of a package uploaded for notarization..." = "Retrieved status of a package uploaded for notarization...";
+
+/* Status message while getting allowed platforms list from server. */
+"Retrieving list of allowed platforms..." = "Retrieving list of allowed platforms...";
+
+/* Status message while getting the history of Developer ID+ requests from the server */
+"Retrieving notarization history..." = "Retrieving notarization history...";
+
+/* Status message while getting the status of a package uploaded for Developer ID+ evaluation from server. */
+"Retrieving status of a package uploaded for notarization..." = "Retrieving status of a package uploaded for notarization...";
+
+/* User feedback message */
+"Sending API usage to App Store Connect…" = "Sending API usage to App Store Connect…";
+
+/* User feedback message */
+"Sent API usage to App Store Connect, waiting for response…" = "Sent API usage to App Store Connect, waiting for response…";
+
+/* skipping, feedback message */
+"Skipped validating application attributes on App Store Connect" = "Skipped validating application attributes on App Store Connect";
+
+/* skipped, feedback message */
+"Skipped validating product attributes on App Store Connect" = "Skipped validating product attributes on App Store Connect";
+
+/* skipping API file */
+"Skipping App Store Connect API analysis file" = "Skipping App Store Connect API analysis file";
+
+/* Error message when an application is not found at the given path, $1 is the path */
+"The application is invalid. %@ does not exist." = "The application is invalid. %@ does not exist.";
+
+/* Error message when the path given for an application is empty */
+"The application is invalid. You must specify a path to an application." = "The application is invalid. You must specify a path to an application.";
+
+/* Error message when there is no application at the path specified, $1 is the path */
+"The archive is invalid. %@ does not exist." = "The archive is invalid. %@ does not exist.";
+
+/* Error message when the path to an application is empty */
+"The archive is invalid. You must specify a path to an archive." = "The archive is invalid. You must specify a path to an archive.";
+
+/* The ditto binary must exist and must be executable: @dittoPath */
+"The ditto binary must exist and must be executable: %@" = "The ditto binary must exist and must be executable: %@";
+
+/* Error message when Transporter components are not installed properly */
+"The embedded Java binary is not executable. Please reinstall the Xcode developer tools." = "The embedded Java binary is not executable. Please reinstall the Xcode developer tools.";
+
+/* File not executable at file path $1 */
+"The file '%@' is not executable." = "The file '%@' is not executable.";
+
+/* Error message when application archive has failed to extract the bundle identifier from the info plist */
+"The Info.plist in the package must contain the CFBundleIdentifier key." = "The Info.plist in the package must contain the CFBundleIdentifier key.";
+
+/* Error message when application archive has failed to extract the bundle short version string from the info plist */
+"The Info.plist in the package must contain the CFBundleShortVersionString key." = "The Info.plist in the package must contain the CFBundleShortVersionString key.";
+
+/* Error message when application archive has failed to extract the bundle version from the info plist */
+"The Info.plist in the package must contain the CFBundleVersion key." = "The Info.plist in the package must contain the CFBundleVersion key.";
+
+/* Error displayed when the Info.plist determines the platform type as Mac but the package submitted is iOS. */
+"The Info.plist indicates a Mac app, but submitting an ipa." = "The Info.plist indicates a Mac app, but submitting an ipa.";
+
+/* Error displayed when the Info.plist determines the platform type as iOS but the package submitted is Mac. */
+"The Info.plist indicates an iOS app, but submitting a pkg or mpkg." = "The Info.plist indicates an iOS app, but submitting a pkg or mpkg.";
+
+/* Error displayed when we fail to extract package: $1 is the localized error description */
+"The package could not be unpacked because of the following error: %@" = "The package could not be unpacked because of the following error: %@";
+
+/* The provided path is not a valid location */
+"The path '%@' does not contain a file." = "The path '%@' does not contain a file.";
+
+/* File not found at file path $1 */
+"The path '%@' does not exist." = "The path '%@' does not exist.";
+
+/* User feedback message. */
+"The resulting API analysis file is too large.  We were unable to validate your API usage prior to delivery.  This is just an informational message." = "The resulting API analysis file is too large.  We were unable to validate your API usage prior to delivery.  This is just an informational message.";
+
+/* Error shown when a tool isn't found. param 1 is the name of the tool */
+"There is no %@ executable defined." = "There is no %@ executable defined.";
+
+/* Error message when verifying Transporter components are installed */
+"There is no embedded Java executable. Please reinstall the Xcode developer tools." = "There is no embedded Java executable. Please reinstall the Xcode developer tools.";
+
+/* Error message when application archive has failed to upload. The error type here is unknown. The variable is the calling app which could be either altool, Xcode, or Application Loader
+   Error message when application archive has failed to validate. The error type here is unknown. The variable is the calling app which could be either altool, Xcode, or Application Loader */
+"This version of %@ cannot determine your application type.  Please update to a newer version." = "This version of %@ cannot determine your application type.  Please update to a newer version.";
+
+/* Error message when application archive has failed to upload. The error type here is unknown. The variable is the calling app which could be either altool, Xcode, or Application Loader
+   Error message when application archive has failed to upload. The variable is the calling app which could be either altool, Xcode, or Application Loader
+   Error message when application archive has failed to validate. The variable is the calling app which could be either altool, Xcode, or Application Loader */
+"This version of %@ cannot process applications of type '%@'.  Please update to a newer version." = "This version of %1$@ cannot process applications of type '%2$@'.  Please update to a newer version.";
+
+/* shown when delivering an app to indicate the platform */
+"tvOS App" = "tvOS App";
+
+/* An error happened when trying to analyze the signing info for a software package. */
+"Unable to analyze signing information: %@" = "Unable to analyze signing information: %@";
+
+/* Error message: Unable to create temp directory @tempDir */
+"Unable to create directory: %@" = "Unable to create directory: %@";
+
+/* Error message: Unable to extract @archivePath to @tempDir */
+"Unable to extract %@ to %@" = "Unable to extract %1$@ to %2$@";
+
+/* error: Unable to extract archive.  Please make sure @archivePath is a valid zip or ipa archive. */
+"Unable to extract archive.  Please make sure %@ is a valid zip or ipa archive." = "Unable to extract archive.  Please make sure %@ is a valid zip or ipa archive.";
+
+/* Error message when the bundle identifier cannot be read from the Info.plist file, $1 is the path to the archive */
+"Unable to extract the bundle identifier from the Info.plist in archive %@" = "Unable to extract the bundle identifier from the Info.plist in archive %@";
+
+/* Can't find swinfo */
+"Unable to find swinfo." = "Unable to find swinfo.";
+
+/* Can't find swinfo */
+"Unable to locate embedded swinfo." = "Unable to locate embedded swinfo.";
+
+/* Can't run file */
+"Unable to run swinfo." = "Unable to run swinfo.";
+
+/* Error message when the type of application is unknown, $1 is a hexadecimal value */
+"Unable to validate application archives of type: 0x%x" = "Unable to validate application archives of type: 0x%x";
+
+/* Error message when the type of application is unknown, $1 is a hexadecimal value for the type */
+"Unable to validate applications of type: 0x%x" = "Unable to validate applications of type: 0x%x";
+
+/* Error reason when writing a file to the user application support directory fails */
+"Unable to write XML to user area" = "Unable to write XML to user area";
+
+/* completed, feedback message */
+"Validated application API usage via App Store Connect" = "Validated application API usage via App Store Connect";
+
+/* completed, feedback message */
+"Validated application attributes on App Store Connect" = "Validated application attributes on App Store Connect";
+
+/* completed, feedback message */
+"Validated hosted content for IAP packages via App Store Connect" = "Validated hosted content for IAP packages via App Store Connect";
+
+/* completed feedback message */
+"Validated product attributes on App Store Connect" = "Validated product attributes on App Store Connect";
+
+/* status message */
+"Verify App Store Connect product" = "Verify App Store Connect product";
+
+/* initial, feedback message */
+"Verify application API usage via App Store Connect" = "Verify application API usage via App Store Connect";
+
+/* initial, feedback message */
+"Verify application attributes via App Store Connect" = "Verify application attributes via App Store Connect";
+
+/* initial, feedback message */
+"Verify hosted content for IAP packages via App Store Connect" = "Verify hosted content for IAP packages via App Store Connect";
+
+/* initial feedback message */
+"Verify product attributes via App Store Connect" = "Verify product attributes via App Store Connect";
+
+/* status message */
+"Verifying App Store Connect product…" = "Verifying App Store Connect product…";
+
+/* running, feedback message */
+"Verifying application API usage via App Store Connect…" = "Verifying application API usage via App Store Connect…";
+
+/* running, feedback message */
+"Verifying application attributes via App Store Connect…" = "Verifying application attributes via App Store Connect…";
+
+/* running, feedback message */
+"Verifying hosted content for IAP packages via App Store Connect…" = "Verifying hosted content for IAP packages via App Store Connect…";
+
+/* running feedback message */
+"Verifying product attributes via App Store Connect…" = "Verifying product attributes via App Store Connect…";
+
+/* Unable to create the session. */
+"We are unable to create an authentication session." = "We are unable to create an authentication session.";
+
+/* error: You must provide an archive extraction destination path. */
+"You must provide an archive extraction destination path." = "You must provide an archive extraction destination path.";
+
+/* error: You must provide an archive path. */
+"You must provide an archive path." = "You must provide an archive path.";
+
+/* Error message when the bundle id is missing or empty */
+"Your application must specify a bundle identifier" = "Your application must specify a bundle identifier";
+

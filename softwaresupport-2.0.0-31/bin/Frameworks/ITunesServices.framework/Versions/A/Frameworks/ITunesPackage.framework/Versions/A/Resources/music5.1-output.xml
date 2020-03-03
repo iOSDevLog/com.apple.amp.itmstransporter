@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of music elements to objects</description>
+    
+    <!-- mapping for class 'AlbumProductElement' -->
+    <class name="AlbumProductElement" extends="AbstractElement">
+        <field name="territory"><bind-xml node="element"/></field>
+        <field name="wholesalePriceTier"><bind-xml name="wholesale_price_tier" node="element"/></field>
+        <field name="preorderWholesalePriceTier"><bind-xml name="preorder_wholesale_price_tier" node="element"/></field>
+        <field name="defaultTrackWholesalePriceTier"><bind-xml name="default_track_wholesale_price_tier" node="element"/></field>
+        <field name="salesStartDate"><bind-xml name="sales_start_date" node="element"/></field>
+        <field name="preorderSalesStartDate"><bind-xml name="preorder_sales_start_date" node="element"/></field>
+        <field name="clearedForSale" type="Boolean"><bind-xml name="cleared_for_sale" node="element"/></field>
+        <field name="sellPlusQuality" type="Boolean"><bind-xml name="sell_plus_quality" node="element"/></field>
+        <field name="clearedForTicketmaster" type="Boolean"><bind-xml name="cleared_for_ticketmaster" node="element"/></field>
+        <field name="bundleOnly" type="Boolean"><bind-xml name="bundle_only" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'TrackProductElement' -->
+    <class name="TrackProductElement" extends="AbstractElement">
+        <field name="territory"><bind-xml node="element"/></field>
+        <field name="wholesalePriceTier"><bind-xml name="wholesale_price_tier" node="element"/></field>
+        <field name="clearedForSale" type="Boolean"><bind-xml name="cleared_for_sale" node="element"/></field>
+        <field name="salesStartDate"><bind-xml name="sales_start_date" node="element"/></field>
+        <field name="clearedForUserGeneratedRingtones" type="Boolean"><bind-xml name="cleared_for_user_generated_ringtones" node="element"/></field>
+        <field name="bundleOnly" type="Boolean"><bind-xml name="bundle_only" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'ArtistElement' -->
+    <class name="ArtistElement" extends="AbstractElement">
+        <field name="names" collection="array" type="LocalizedStringElement"><bind-xml name="name" node="element"/></field>
+        <field name="name"><bind-xml name="artist_name" node="element"/></field>
+        <field name="phoneticName"><bind-xml name="phonetic_name" node="element"/></field>
+        <field name="appleId" type="integer"><bind-xml name="apple_id" node="element"/></field>
+        <field name="roles" collection="array" type="NameElement"><bind-xml name="role" location="roles" node="element"/></field>
+        <field name="locales" collection="array" type="MusicLocaleElement"><bind-xml name="locale" location="locales" node="element"/></field>
+        <field name="primary" type="Boolean"><bind-xml node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'ChapterElement' -->
+    <class name="ChapterElement" extends="AbstractElement">
+        <field name="startTime"><bind-xml name="chapter_start_time" node="element"/></field>
+        <field name="titles" collection="array" type="LocalizedStringElement"><bind-xml name="chapter_title" node="element"/></field>
+        <field name="artworkFile" type="AssetElement"><bind-xml name="artwork_file" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'MusicLocaleElement' -->
+    <class name="MusicLocaleElement" extends="AbstractElement">
+        <field name="name"><bind-xml node="attribute"/></field>
+        <field name="title"><bind-xml name="title" node="element"/></field>
+        <field name="phoneticTitle"><bind-xml name="phonetic_title" node="element"/></field>
+        <field name="titleVersion"><bind-xml name="title_version" node="element"/></field>
+        <field name="artistName"><bind-xml name="artist_name" node="element"/></field>
+        <field name="phoneticArtistName"><bind-xml name="phonetic_name" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'AbstractSalableElement' -->
+    <class name="AbstractMusicElement" extends="AbstractCopyrightableElement">
+        <field name="labelName">
+            <bind-xml name="label_name" node="element"/>
+            <alt-xml name="track_label_name"/>
+            <alt-xml name="album_label_name"/>
+        </field>
+        <field name="grid">
+            <bind-xml name="grid" node="element"/>
+            <alt-xml name="track_grid"/>
+            <alt-xml name="album_grid"/>
+        </field>
+        <field name="titles" collection="array" type="LocalizedStringElement">
+            <bind-xml name="title" node="element"/>
+            <alt-xml name="track_title"/>
+            <alt-xml name="album_title"/>
+        </field>
+        <field name="phoneticTitle"><bind-xml name="phonetic_title" node="element"/></field>
+        <field name="titleVersions" collection="array" type="LocalizedStringElement">
+            <bind-xml name="title_version" node="element"/>
+            <alt-xml name="track_title_version"/>
+            <alt-xml name="album_title_version"/>
+        </field>
+        <field name="phoneticTitleVersion"><bind-xml name="phonetic_title_version" node="element"/></field>
+        <field name="locales" collection="array" type="MusicLocaleElement"><bind-xml name="locale" location="locales" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'TrackElement' -->
+    <class name="TrackElement" extends="AbstractMusicElement">
+        <map-to xml="track"/>
+        <field name="type">
+            <bind-xml name="type" node="element"/>
+            <alt-xml name="track_type"/>
+        </field>
+        <field name="isrc">
+            <bind-xml name="isrc" node="element"/>
+            <alt-xml name="track_isrc"/>
+        </field>
+        <field name="sourceIsrc">
+            <bind-xml name="source_isrc" node="element"/>
+        </field>
+        <field name="gaplessPlay" type="Boolean">
+            <bind-xml name="gapless_play" node="element"/>
+            <alt-xml name="track_gapless_play"/>
+        </field>
+        <field name="products" collection="array" type="TrackProductElement">
+            <bind-xml name="product" location="products" node="element"/>
+            <alt-xml name="product" location="track_products"/>
+        </field>
+        <field name="explicitContent">
+            <bind-xml name="explicit_content" node="element"/>
+            <alt-xml name="track_explicit_lyrics"/>
+        </field>
+        <field name="lyrics">
+            <bind-xml name="lyrics" node="element"/>
+            <alt-xml name="track_lyrics"/>
+        </field>
+        <field name="lyricsFormat">
+            <bind-xml name="format" location="lyrics" node="attribute"/>
+        </field>
+        <field name="removeLyrics" type="Boolean">
+            <bind-xml name="remove" location="lyrics" node="attribute"/>
+        </field>
+        <field name="linerNotes">
+            <bind-xml name="liner_notes" node="element"/>
+            <alt-xml name="track_liner_notes"/>
+        </field>
+        <field name="beatsPerMinute">
+            <bind-xml name="beats_per_minute" node="element"/>
+            <alt-xml name="track_beats_per_minute"/>
+        </field>
+        <field name="volume" type="integer">
+            <bind-xml name="volume_number" node="element"/>
+            <alt-xml name="track_volume_number"/>
+        </field>
+        <field name="trackNumber" type="integer">
+            <bind-xml name="track_number" node="element"/>
+            <alt-xml name="track_track_number"/>
+        </field>
+        <field name="file" type="AssetElement">
+            <bind-xml name="audio_file" node="element"/>
+            <alt-xml name="track_audio_file"/>
+        </field>
+        <field name="toneStartTime" type="integer">
+            <bind-xml name="tone_start_time" node="element"/>
+        </field>
+        <field name="toneDuration" type="integer">
+            <bind-xml name="tone_duration" node="element"/>
+        </field>
+        <field name="previewStartIndex">
+            <bind-xml name="preview_start_index" node="element"/>
+            <alt-xml name="track_preview_start_index"/>
+        </field>
+        <field name="language"><bind-xml node="element"/></field>
+        <field name="audioLanguage"><bind-xml name="audio_language" node="element"/></field>
+        <field name="preorderType"><bind-xml name="preorder_type" node="element"/></field>
+        <field name="chapters" collection="array" type="ChapterElement"><bind-xml name="chapter" location="chapters" node="element"/></field>
+        <field name="displayArtist">
+            <bind-xml name="display_artist" node="element"/>
+        </field>
+        <field name="masteredBy">
+            <bind-xml name="mastered_by" node="element"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'BonusMaterialElement' -->
+    <class name="BonusMaterialElement" extends="AbstractElement">
+        <map-to xml="bonus_material"/>
+        <field name="vendorId">
+            <bind-xml name="vendor_identifier" node="element"/>
+            <alt-xml name="vendor_id"/>
+        </field>
+        <field name="xid" type="XidElement"><bind-xml name="xid" node="element"/></field>
+        <field name="name"><bind-xml name="bonus_material_name" node="element"/></field>
+        <field name="copyright"><bind-xml name="copyright" node="element"/></field>
+        <field name="file" type="AssetElement"><bind-xml name="file" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'MusicBookletElement' -->
+    <class name ="MusicBookletElement" extends="AbstractElement">
+        <map-to xml="booklet"/>
+        <field name="vendorID"><bind-xml name="vendor_id" node="element"/></field>
+        <field name="title"><bind-xml name="title" node="element"/></field>
+        <field name="copyright"><bind-xml name="copyright" node="element"/></field>
+        <field name="trackNumber" type="integer"><bind-xml name="track_number" node="element"/></field>
+        <field name="explicitContent"><bind-xml name="explicit_content" node="element"/></field>
+        <field name="file" type="AssetElement"><bind-xml name="file" node="element"/></field>
+        <field name="volume" type="integer"><bind-xml name="volume_number" node="element"/></field>
+        <field name="vendorOfferCode"><bind-xml name="vendor_offer_code" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'MusicExtraVideoItemElement' -->
+    <class name="MusicExtraVideoItemElement" extends="AbstractSalableElement">
+        <field name="path"><bind-xml name="target_path" node="element"/></field>
+        <field name="assets" collection="array" type="AssetContainerElement">
+            <bind-xml name="asset" location="assets" node="element"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'MusicExtraElement' -->
+    <class name="MusicExtraElement" extends="AbstractSalableElement">
+        <map-to xml="extra"/>
+        <field name="title"><bind-xml name="title" node="element"/></field>
+        <field name="volume" type="integer"><bind-xml name="volume_number" node="element"/></field>
+        <field name="trackNumber" type="integer"><bind-xml name="track_number" node="element"/></field>
+        <field name="locales" collection="array" type="MusicExtraLocaleElement">
+            <bind-xml name="locale" location="locales" node="element"/>
+        </field>
+        <field name="screenshots" collection="array" type="ScreenshotAssetElement">
+            <bind-xml name="screenshot" location="screenshots" node="element"/>
+        </field>
+        <field name="extraProducts" collection="array" type="TrackProductElement">
+            <bind-xml name="product" location="products" node="element"/>
+        </field>
+        <field name="archive" type="AssetElement"><bind-xml name="archive_file" node="element"/></field>
+        <field name="videoItems" collection="array" type="MusicExtraVideoItemElement">
+            <bind-xml name="video_item" location="video_items" node="element"/>
+        </field>
+        <field name="vendorOfferCode"><bind-xml name="vendor_offer_code" node="element"/></field>
+    </class>
+    
+    <!-- mapping for class 'MusicExtraLocaleElement' -->
+    <class name="MusicExtraLocaleElement" extends="AbstractElement">
+        <field name="name"><bind-xml node="attribute"/></field>
+        <field name="defaultValue" type="Boolean"><bind-xml name="default" node="attribute"/></field>
+        <field name="remove" type="Boolean"><bind-xml node="attribute"/></field>
+        <field name="contentDescription"><bind-xml name="description" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'AbstractTrackContainer' -->
+    <class name="AbstractTrackContainer" extends="AbstractElement">
+        <field name="tracks" collection="array"><bind-xml name="track" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'WorkElement' -->
+    <class name="WorkElement" extends="AbstractTrackContainer">
+        <map-to xml="work"/>
+        <field name="name"><bind-xml name="name" node="attribute"/></field>
+    </class>
+
+    <!-- mapping for class 'TrackGroupElement' -->
+    <class name="TrackGroupElement" extends="AbstractTrackContainer" self-first="true">
+        <map-to xml="track_group"/>
+        <field name="name"><bind-xml name="group_name" node="element"/></field>
+        <field name="vendorId"><bind-xml name="vendor_id" node="element"/></field>
+        <field name="artwork" collection="array" type="AssetElement">
+            <bind-xml name="file" location="artwork_files" node="element"/>
+            <alt-xml name="file" location="album_artwork_files"/>
+        </field>
+    </class>
+
+    <!-- mapping for class 'AlbumElement' -->
+    <class name="AlbumElement" extends="AbstractMusicElement">
+        <field name="type">
+            <bind-xml name="album_type" node="element"/>
+        </field>
+        <field name="upc">
+            <bind-xml name="upc" node="element"/>
+            <alt-xml name="album_upc"/>
+        </field>
+        <field name="originalReleaseDate">
+            <bind-xml name="original_release_date" node="element"/>
+            <alt-xml name="album_release_date"/>
+        </field>
+        <field name="artwork" collection="array" type="AssetElement">
+            <bind-xml name="file" location="artwork_files" node="element"/>
+            <alt-xml name="file" location="album_artwork_files"/>
+        </field>
+        <field name="shortDescription">
+            <bind-xml name="description_short" node="element"/>
+            <alt-xml name="album_description_short"/>
+        </field>
+        <field name="longDescription">
+            <bind-xml name="description_long" node="element"/>
+            <alt-xml name="album_description_long"/>
+        </field>
+        <field name="preorderPreviewAllowed" type="Boolean">
+            <bind-xml name="preorder_previews" node="element"/>
+            <alt-xml name="album_preorder_previews"/>
+        </field>
+        <field name="trackCount" type="integer">
+            <bind-xml name="track_count" node="element"/>
+            <alt-xml name="album_track_count"/>
+        </field>
+        <field name="products" collection="array" type="AlbumProductElement">
+            <bind-xml name="product" location="products" node="element"/>
+            <alt-xml name="product" location="album_products"/>
+        </field>
+        <field name="tracks" collection="array">
+            <bind-xml name="tracks" node="element"/>
+            <alt-xml name="album_tracks"/>
+        </field>
+        <field name="displayArtist">
+            <bind-xml name="display_artist" node="element"/>
+        </field>
+        <field name="masteredForItunes" type="Boolean">
+            <bind-xml name="mastered_for_itunes" node="element"/>
+        </field>
+    </class>
+</mapping>

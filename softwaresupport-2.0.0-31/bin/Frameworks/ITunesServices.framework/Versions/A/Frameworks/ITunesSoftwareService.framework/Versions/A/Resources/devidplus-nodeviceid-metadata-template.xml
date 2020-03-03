@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="software5.9" xmlns="http://apple.com/itunes/importer">
+    <software_assets
+        app_platform="@@PlatformType@@"
+        primary_bundle_identifier="@@CFBundleIdentifier@@">
+        <asset type="developer-id-package">
+            <data_file>
+                <file_name>@@Filename@@</file_name>
+                <checksum type="md5">@@Checksum@@</checksum>
+                <size>@@Size@@</size>
+            </data_file>
+        </asset>
+    </software_assets>
+</package>

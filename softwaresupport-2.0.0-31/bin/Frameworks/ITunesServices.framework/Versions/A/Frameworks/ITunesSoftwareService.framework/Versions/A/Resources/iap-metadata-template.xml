@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<package version="software5.4" xmlns="http://apple.com/itunes/importer">
+    <provider>@@Provider@@</provider>
+    <software>
+        <vendor_id>@@SKU@@</vendor_id>
+        <software_assets
+            app_platform="@@PlatformType@@">
+            <asset type="in-app-purchase-content" product_id="@@Product ID@@">
+                <data_file>
+                    <file_name>@@Filename@@</file_name>
+                    <size>@@Size@@</size>
+                    <checksum type="md5">@@Checksum@@</checksum>
+                </data_file>
+            </asset>
+        </software_assets>
+    </software>
+</package>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of film video elements to objects</description>
+    
+    <!-- mapping for class 'AbstractVideoRatingElement' -->
+    <class name="AbstractVideoRatingElement" extends="AbstractElement">
+        <field name="system"><bind-xml node="attribute"/></field>
+        <field name="reason"><bind-xml node="attribute"/></field>
+        <field name="rating"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoRatingElement' -->
+    <class name="VideoRatingElement" extends="AbstractVideoRatingElement">
+    </class>
+
+    <!-- mapping for class 'VideoRatingContainerElement' -->
+    <class name="VideoRatingContainerElement" extends="AbstractElement">
+        <field name="ratings" collection="array" type="VideoRatingElement"><bind-xml name="rating" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoCreditElement' -->
+    <class name="VideoCreditElement" extends="AbstractElement">
+        <field name="name"><bind-xml node="attribute"/></field>
+        <field name="display"><bind-xml node="attribute"/></field>
+        <field name="amgArtistId"><bind-xml name="amg_artist_id" node="attribute"/></field>
+        <field name="billing"><bind-xml node="attribute"/></field>
+        <field name="role"><bind-xml node="text"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoChapterElement' -->
+    <class name="VideoChapterElement" extends="AbstractElement">
+        <field name="startTime"><bind-xml name="start_time" node="element"/></field>
+        <field name="title" type="LocalizedStringElement"><bind-xml name="title" node="element"/></field>
+        <field name="titles" collection="array" type="LocalizedStringElement"><bind-xml name="title" location="titles" node="element"/></field>
+        <field name="artworkFile" type="AssetElement"><bind-xml name="artwork_file" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoChapterContainerElement' -->
+    <class name="VideoChapterContainerElement" extends="AbstractElement">
+        <field name="timecodeFormat"><bind-xml name="timecode_format" node="element"/></field>
+        <field name="chapters" collection="array" type="VideoChapterElement"><bind-xml name="chapter" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoProductElement' -->
+    <class name="VideoProductElement" extends="AbstractElement">
+        <field name="territory"><bind-xml node="element"/></field>
+        <field name="clearedForSale" type="Boolean"><bind-xml name="cleared_for_sale" node="element"/></field>
+        <field name="wholesalePriceTier"><bind-xml name="wholesale_price_tier" node="element"/></field>
+        <field name="preorderSalesStartDate"><bind-xml name="preorder_sales_start_date" node="element"/></field>
+        <field name="salesStartDate"><bind-xml name="sales_start_date" node="element"/></field>
+        <field name="salesEndDate"><bind-xml name="sales_end_date" node="element"/></field>
+        <field name="clearedForHDSale" type="Boolean"><bind-xml name="cleared_for_hd_sale" node="element"/></field>
+        <field name="clearedForVOD" type="Boolean"><bind-xml name="cleared_for_vod" node="element"/></field>
+        <field name="vodType"><bind-xml name="vod_type" node="element"/></field>
+        <field name="availableForVODDate"><bind-xml name="available_for_vod_date" node="element"/></field>
+        <field name="unavailableForVODDate"><bind-xml name="unavailable_for_vod_date" node="element"/></field>
+        <field name="physicalReleaseDate"><bind-xml name="physical_release_date" node="element"/></field>
+        <field name="clearedForHDVOD" type="Boolean"><bind-xml name="cleared_for_hd_vod" node="element"/></field>
+        <field name="bundleOnly" type="Boolean"><bind-xml name="bundle_only" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoRegionElement' -->
+    <class name="VideoRegionElement" extends="AbstractElement">
+        <field name="territory"><bind-xml name="territory" node="element"/></field>
+        <field name="copyrightPline"><bind-xml name="copyright_pline" node="element"/></field>
+        <field name="copyrightCline"><bind-xml name="copyright_cline" node="element"/></field>
+        <field name="theatricalReleaseDate"><bind-xml name="theatrical_release_date" node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoCueTimeElement' -->
+    <class name="VideoCueTimeElement" extends="AbstractElement">
+        <field name="startTimecode"><bind-xml name="start_timecode" node="element"/></field>
+        <field name="duration"><bind-xml node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoPreviewElement' -->
+    <class name="VideoPreviewElement" extends="AbstractElement">
+        <field name="startTime"><bind-xml name="starttime" node="attribute"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoCueElement' -->
+    <class name="VideoCueElement" extends="AbstractElement">
+        <field name="sequenceNumber"><bind-xml name="sequence_number" node="element"/></field>
+        <field name="time" type="VideoCueTimeElement"><bind-xml name="time" node="element"/></field>
+        <field name="title"><bind-xml name="title" node="element"/></field>
+        <field name="artists" collection="array" type="ArtistElement"><bind-xml name="artist" location="artists" node="element"/></field>
+        <field name="isrc"><bind-xml node="element"/></field>
+        <field name="iswc"><bind-xml node="element"/></field>
+        <field name="copyrightCline"><bind-xml name="copyright_cline" node="element"/></field>
+        <field name="copyrightPline"><bind-xml name="copyright_pline" node="element"/></field>
+        <field name="usage"><bind-xml node="element"/></field>
+    </class>
+
+    <!-- mapping for class 'VideoElement' -->
+    <class name="VideoElement" extends="AbstractCopyrightableElement">
+        <map-to xml="video"/>
+        <field name="type"><bind-xml name="type" node="element"/></field>
+        <field name="subtype"><bind-xml name="subtype" node="element"/></field>
+        <field name="containerId"><bind-xml name="container_id" node="element"/></field>
+        <field name="containerPosition"><bind-xml name="container_position" node="element"/></field>
+        <field name="isan"><bind-xml name="isan" node="element"/></field>
+        <field name="episodeProductionNumber"><bind-xml name="episode_production_number" node="element"/></field>
+        <field name="upc"><bind-xml name="upc" node="element"/></field>
+        <field name="amgVideoId"><bind-xml name="amg_video_id" node="element"/></field>
+        <field name="country"><bind-xml name="country" node="element"/></field>
+        <field name="originalSpokenLocale"><bind-xml name="original_spoken_locale" node="element"/></field>
+        <field name="title"><bind-xml name="title" node="element"/></field>
+        <field name="shortDescription"><bind-xml name="short_description" node="element"/></field>
+        <field name="longDescription"><bind-xml name="long_description" node="element"/></field>
+        <field name="networkName"><bind-xml name="network_name" node="element"/></field>
+        <field name="synopsis"><bind-xml name="synopsis" node="element"/></field>
+        <field name="locales" collection="array" type="LocaleContainerElement"><bind-xml name="locale" location="locales" node="element"/></field>
+        <field name="productionCompany"><bind-xml name="production_company" node="element"/></field>
+        <field name="theatricalReleaseDate"><bind-xml name="theatrical_release_date" node="element"/></field>
+        <field name="regions" collection="array" type="VideoRegionElement"><bind-xml name="region" location="regions" node="element"/></field>
+        <field name="volume" type="integer"><bind-xml name="volume_number" node="element"/></field>
+        <field name="explicitContent"><bind-xml name="explicit_content" node="element"/></field>
+        <field name="isrc"><bind-xml name="isrc" node="element"/></field>
+        <field name="releaseDate"><bind-xml name="release_date" node="element"/></field>
+        <field name="trackNumber" type="integer"><bind-xml name="track_number" node="element"/></field>
+        <field name="ratingsContainer" type="VideoRatingContainerElement"><bind-xml name="ratings" node="element"/></field>
+        <field name="cast" collection="array" type="VideoCreditElement"><bind-xml name="actor" location="cast" node="element"/></field>
+        <field name="crew" collection="array" type="VideoCreditElement"><bind-xml name="member" location="crew" node="element"/></field>
+        <field name="chapterContainer" type="VideoChapterContainerElement"><bind-xml name="chapters" node="element"/></field>
+        <field name="assets" collection="array" type="AssetContainerElement"><bind-xml name="asset" location="assets" node="element"/></field>
+        <field name="preview" type="VideoPreviewElement"><bind-xml name="preview" node="element"/></field>
+        <field name="products" collection="array" type="VideoProductElement"><bind-xml name="product" location="products" node="element"/></field>
+        <field name="cueSheet" collection="array" type="VideoCueElement"><bind-xml name="cue" location="cue_sheet" node="element"/></field>
+    </class>
+
+</mapping>

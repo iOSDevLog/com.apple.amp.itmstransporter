@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+    <description>Mapping of artist elements to objects</description>
+
+    <!-- mapping for class 'ArtistElement' -->
+    <class name="ArtistPackageElement" extends="AbstractElement">
+        <field name="names" collection="array" type="LocalizedStringElement">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="name">
+            <bind-xml name="artist_name" node="element"/>
+        </field>
+        <field name="phoneticName">
+            <bind-xml name="phonetic_name" node="element"/>
+        </field>
+        <field name="appleId" type="integer">
+            <bind-xml name="apple_id" node="element"/>
+        </field>
+        <field name="generateAppleId" type="Boolean">
+            <bind-xml name="generate" location="apple_id" node="attribute"/>
+        </field>
+        <field name="locales" collection="array" type="MusicLocaleElement">
+            <bind-xml name="locale" location="locales" node="element"/>
+        </field>
+    </class>
+    
+</mapping>
