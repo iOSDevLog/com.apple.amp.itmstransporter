@@ -6,7 +6,8 @@
 ## 使用
 
 1. 下载 `Release` 下面的 `zip` 包，或者 `git clone https://github.com/iOSDevLog/com.apple.amp.itmstransporter`
-1. 替换`~/Library/Caches/com.apple.amp.itmstransporter`
+1. 替换 `~/Library/Caches/com.apple.amp.itmstransporter`
+1. 修改路径：[#1](../../issues/1)
 
 ## 原因
 
