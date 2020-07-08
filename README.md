@@ -3,9 +3,14 @@
 
 解决使用 Transporter 上传 **ipa** 到 App Store 时，有时间会卡住或者非常慢。
 
+## 历史
+
+2020/07/08: #4
+2020/03/03: first commit
+
 ## 使用
 
-1. 下载 `Release` 下面的 `zip` 包，或者 `git clone https://github.com/iOSDevLog/com.apple.amp.itmstransporter`
+1. 下载 [Release](https://github.com/iOSDevLog/com.apple.amp.itmstransporter/releases) 下面的 `zip` 包，或者 `git clone https://github.com/iOSDevLog/com.apple.amp.itmstransporter`
 1. 替换 `~/Library/Caches/com.apple.amp.itmstransporter`
 1. 修改路径：[#1](../../issues/1)
 
